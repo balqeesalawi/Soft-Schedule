@@ -1,0 +1,15 @@
+<nav>
+<% if(user){%>
+<p>Welcome <%= user.username%> to the SoftSchedule App !</p>
+<a href="/auth/sign-out">Sign-Out</a>
+
+<%} else { %>
+ <p>welcome to the app guest!</p>
+  <a href="/auth/sign-up">Sign-Up</a>
+  <a href="/auth/sign-in">Sign-In</a>
+
+<%}%>
+
+
+
+</nav>
