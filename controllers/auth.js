@@ -2,6 +2,15 @@ const User = require("../models/user")
 const bcrypt = require("bcrypt")
 
 
+
+//APi's
+
+
+ exports.auth_signout_get = async (req, res)=>{
+  req.session.destroy()
+  res.redirect("/auth/sign-in")
+ }
+
 exports.auth_signup_get = async (req, res) => {
     res.render("auth/sign-up.ejs")
 }
@@ -51,3 +60,4 @@ exports.auth_signin_post = async (req, res) => {
   res.redirect("/")
 
 }
+
