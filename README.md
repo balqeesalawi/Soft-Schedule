@@ -28,7 +28,7 @@
   * express-session
   * methodOverride
   * morgan
-  * bcript
+  * bcrypt
   * ejs
 ***
 
