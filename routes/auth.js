@@ -1,5 +1,7 @@
 const router = require('express').Router()
 
+const autherCtrl = require('../controllers/auth')
 
 
-module.exports = router
+router.get("/sign-in", autherCtrl.auth_signin_get)
+router.post("/sign-in", autherCtrl.auth_signin_post)
