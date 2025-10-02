@@ -22,5 +22,5 @@ const bookSchema = new mongoose.Schema({
         }
 })
 
-const ToDo = mongoose.model('ToDo', todoSchema)
-module.exports = ToDo
+const Book = mongoose.model('Book', bookSchema)
+module.exports = Book
