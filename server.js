@@ -19,9 +19,9 @@ app.use(
   })
 )
 
-const passUsser = require("./middleware/passUser")
+const passUser = require("./middleware/passUser")
 const isSignedIn = require("./middleware/is-signed-in")
-app.use(passUsser)
+app.use(passUser)
 app.use((req, res, next) => {
   res.locals.user = req.session.user
   next()

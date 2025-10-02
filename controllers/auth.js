@@ -6,11 +6,6 @@ const bcrypt = require("bcrypt")
 //APi's
 
 
- exports.auth_signout_get = async (req, res)=>{
-  req.session.destroy()
-  res.redirect("/auth/sign-in")
- }
-
 exports.auth_signup_get = async (req, res) => {
     res.render("auth/sign-up.ejs")
 }
@@ -33,12 +28,14 @@ exports.auth_signup_post = async (req, res) => {
     const user = await User.create(req.body)
     res.send(`Thanks for signing up ${user.username}`)
 
+}
+
 exports.auth_signin_get = async (req, res) => {
   res.render("auth/sign-in.ejs");
 }
 
 exports.auth_signin_post = async (req, res) => {
-  const userInDatabase = await User.findOne({ email: req.body.email })
+  const userInDatabase = await User.findOne({ username: req.body.username })
   if (!userInDatabase) {
     return res.send("Login failed. Please try again later...")
   }
@@ -61,4 +58,9 @@ exports.auth_signin_post = async (req, res) => {
 
 }
 
-}
+
+
+ exports.auth_signout_get = async (req, res)=>{
+  req.session.destroy()
+  res.redirect("/auth/sign-in")
+ }
