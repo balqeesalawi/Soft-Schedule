@@ -1,0 +1,18 @@
+<h1>Your Goals</h1>
+
+<form action="/goals/filter" method="GET">
+  <label>Filter by Duration:</label>
+  <select name="duration">
+    <option value="">All</option>
+    <option value="week">Week</option>
+    <option value="month">Month</option>
+    <option value="year">Year</option>
+  </select>
+  <button type="submit">Filter</button>
+</form>
+
+<ul>
+  <% goals.forEach(goal => { %>
+    <li><%= goal.goal %> - <%= goal.duration %></li>
+  <% }) %>
+</ul>

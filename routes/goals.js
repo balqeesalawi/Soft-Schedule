@@ -1,11 +1,9 @@
 const router = require("express").Router()
-const goalsCtrl = require('../controllers/goals')
-
-//Routes
-router.get("/goals",goalsCtrl.goals_index_get)
-router.get("/new", goalsCtrl.goals_creat_get)
-router.post("/goals", goalsCtrl.goals_creat_post)
+const goalsCtrl = require("../controllers/goals")
 
 
+router.get("/", goalsCtrl.goals_index_get)
+router.get("/new", goalsCtrl.goals_create_get)
+router.post("/", goalsCtrl.goals_create_post)
 
 module.exports = router

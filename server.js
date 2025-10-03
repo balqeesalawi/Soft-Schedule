@@ -36,7 +36,10 @@ app.get("/", (req, res) => {
 const authRouter = require("./routes/auth.js")
 app.use("/auth", authRouter)
 
+const goalsRoutes = require("./routes/goals")
+app.use("/goals", goalsRoutes)
+
 const port = process.env.PORT ? process.env.PORT : 3000
 app.listen(port, () => {
-  console.log("The app is listening")
+  console.log("The app is listening ")
 })
