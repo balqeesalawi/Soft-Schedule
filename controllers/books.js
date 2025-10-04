@@ -29,25 +29,23 @@ exports.Book_show_get = async (req, res) => {
   res.render("books/show.ejs", { reader })
 }
 
-exports.Book_edit_get = async (req, res) =>{
- const reader = await Book.findById(req.params.booksId)
- res.render("books/edit.ejs",{reader})
+exports.Book_edit_get = async (req, res) => {
+  const reader = await Book.findById(req.params.booksId)
+  res.render("books/edit.ejs", { reader })
 }
 
-//exports.Book_update_put = async (req, res) => {
-//const reader = await Book.findby
-//if elseif (req.body.isDoneReading === "on") {
-// req.body.isDoneReading = true
- // } else {
-//   req.body.isDoneReading = false
-  // }
-  // await Book.findByIdAndUpdate(req.params.booksId, req.body)
-//res.redirect(`/books/${req.params.booksId}`)
-//}
-
-exports.Book_delete = async (req, res)=>{
-const reader = await Book.findByIdAndDelete(req.params.booksId).deleteOne()
-res.redirect("/books")
+exports.Book_update_put = async (req, res) => {
+  const reader = await Book.findById(req.params.booksId)
+  if (req.body.isDoneReading === "on") {
+    req.body.isDoneReading = true
+  } else {
+    req.body.isDoneReading = false
+  }
+  await Book.findByIdAndUpdate(req.params.booksId, req.body)
+  res.redirect(`/books/${req.params.booksId}`)
 }
 
-
+exports.Book_delete = async (req, res) => {
+  const reader = await Book.findByIdAndDelete(req.params.booksId).deleteOne()
+  res.redirect("/books")
+}

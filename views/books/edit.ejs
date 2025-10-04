@@ -6,7 +6,7 @@
 
 <h1>Edit your Book list</h1>
 
-<form action="/books/<%= reader._id %>/edit?_method=PUT" method="post">
+<form action="/books/<%= reader._id%>?_method=PUT" method="post">
   <label for="title">Book Title</label>
   <input type="text" name="title" id="title" value="<%= reader.title %>">
   <br>
