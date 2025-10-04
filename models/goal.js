@@ -14,6 +14,10 @@ const goalSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
   },
+  isCompleted: {
+    type: Boolean,
+    default: false
+  }
 })
 
 const Goal = mongoose.model("Goal", goalSchema)

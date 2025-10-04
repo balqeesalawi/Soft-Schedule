@@ -19,6 +19,7 @@ exports.goals_create_post = async (req, res) => {
     goal: req.body.goal,
     duration: req.body.duration,
     owner: req.session.user._id,
+    isCompleted: req.session.isCompleted,
   })
   res.redirect("/goals")
 }
@@ -43,11 +44,20 @@ exports.goals_edit_get = async (req, res) => {
 }
 
 exports.goal_update_put = async (req, res) => {
+  if (!req.session.user) {
+    return res.send("You must be logged in")
+  }
+
   const currentGoal = await Goal.findById(req.params.goalId)
+
   if (currentGoal.owner.equals(req.session.user._id)) {
+
+    req.body.isCompleted = req.body.isCompleted === "on"
+
     await currentGoal.updateOne({
       goal: req.body.goal,
       duration: req.body.duration,
+      isCompleted: req.body.isCompleted
     })
     res.redirect("/goals")
   } else {
