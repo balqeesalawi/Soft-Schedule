@@ -11,9 +11,17 @@
   <button type="submit">Filter</button>
 </form>
 
-<ul>
+<!-- <ul>
   <% goals.forEach(goal => { %>
     <li><%= goal.goal %> - <%= goal.duration %></li>
   <% }) %>
-</ul>
+</ul> -->
 
+<ul>
+  <% goals.forEach(goal => { %>
+    <li>
+      <%= goal.goal %> - <%= goal.duration %>
+      <a href="/goals/<%= goal._id %>/edit">Edit</a>
+    </li>
+  <% }) %>
+</ul>

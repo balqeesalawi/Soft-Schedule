@@ -19,7 +19,7 @@ exports.goals_create_post = async (req, res) => {
 }
 
 exports.goals_filter_get = async (req, res) => {
-  const { duration } = req.query 
+  const { duration } = req.query
 
   let goals
   if (duration) {
@@ -29,4 +29,16 @@ exports.goals_filter_get = async (req, res) => {
   }
 
   res.render("goals/index.ejs", { goals })
+}
+
+exports.goals_edit_get = async (req, res) => {
+  const goal = await Goal.findById(req.params.id)
+  res.render("goals/edit.ejs", { goal })
+}
+
+exports.goal_update_post = async (req, res) => {
+  await Goal.findByIdAndUpdate(req.params.id,{
+    goal: req.body.goal,
+    duration:req.body.duration
+  })
 }
