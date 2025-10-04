@@ -1,1 +1,28 @@
+<head>
+  <title><%= reader.title %></title>
+</head>
+
 <%- include("../partials/_navbar.ejs") %>
+
+<h1>Edit your Book list</h1>
+
+<form action="/books/<%= reader._id %>/edit?_method=PUT" method="post">
+  <label for="title">Book Title</label>
+  <input type="text" name="title" id="title" value="<%= reader.title %>">
+  <br>
+
+  <label for="numOfPages">Number of pages</label>
+  <input type="number" name="numOfPages" id="numOfPages" value="<%= reader.numOfPages%>">
+  <br>
+
+  <label for="pagesPerDay">Pages Per Day</label>
+  <input type="number" name="pagesPerDay" id="pagesPerDay" value="<%= reader.pagesPerDay %>">
+  <br>
+
+  <label for="isDoneReading">Done Reading</label>
+  <input type="checkbox" name="isDoneReading" id="isDoneReading" <% if (reader.isDoneReading){%>
+  checked <%}%>>
+  <br>
+
+  <button type="submit">Update</button>
+</form>
