@@ -7,6 +7,9 @@ app.use(morgan("dev"))
 const methodOverride = require("method-override")
 app.use(methodOverride("_method"))
 
+const isSignedIn = require("./middleware/is-signed-in")
+
+
 require("dotenv").config()
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
@@ -20,7 +23,6 @@ app.use(
 )
 
 const passUser = require("./middleware/passUser")
-const isSignedIn = require("./middleware/is-signed-in")
 app.use(passUser)
 app.use((req, res, next) => {
   res.locals.user = req.session.user
@@ -35,6 +37,9 @@ app.get("/", (req, res) => {
 
 const authRouter = require("./routes/auth.js")
 app.use("/auth", authRouter)
+
+const taskRouter = require('./routes/task.js')
+app.use('/tasks', isSignedIn ,taskRouter)
 
 const port = process.env.PORT ? process.env.PORT : 3000
 app.listen(port, () => {

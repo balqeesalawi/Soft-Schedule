@@ -1,0 +1,23 @@
+<%- include("../partials/_navbar.ejs") %>
+
+<h1>Edit Task</h1>
+<form action="/tasks/<%= task._id %>?_method=PUT" method="post">
+<label for="date">Date</label>
+<input type="date" name="date" id="date" value="<%= task.date %>">
+<br>
+<label for="time">Time</label>
+<input type="time" name="time" id="time" value="<%= task.time %>">
+<br>
+<label for="task">Task</label>
+<input type="text" name="task" id="task" value="<%= task.task %>">
+<br>
+<label for="isDone">isDone?</label>
+<input type="checkbox" name="isDone" id="isDone" 
+    <% if(task.isDone) { %>
+        checked
+        <% } %>
+>
+<br>
+<button type="submit">Edit Task</button>
+
+</form>
