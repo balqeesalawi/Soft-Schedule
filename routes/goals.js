@@ -6,6 +6,8 @@ router.get("/", goalsCtrl.goals_index_get)
 router.get("/new", goalsCtrl.goals_create_get)
 router.post("/", goalsCtrl.goals_create_post)
 router.get("/filter", goalsCtrl.goals_filter_get)
-router.get("/:id/edit", goalsCtrl.goals_edit_get)
-router.get("/:id", goalsCtrl.goal_update_post)
+router.get("/:goalId/edit", goalsCtrl.goals_edit_get)
+router.put("/:goalId", goalsCtrl.goal_update_put)
+router.delete("/:goalId", goalsCtrl.goals_delete)
+
 module.exports = router

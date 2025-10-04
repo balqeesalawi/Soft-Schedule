@@ -6,7 +6,6 @@
 <body>
   <h1>Filter Goals by Duration</h1>
 
-  <!-- Filter Form -->
   <form action="/goals/filter" method="GET">
     <label>Select Duration:</label>
     <select name="duration">
@@ -18,7 +17,6 @@
     <button type="submit">Show</button>
   </form>
 
-  <hr />
 
   <% if (goals.length > 0) { %>
     <h2><%= duration ? duration.charAt(0).toUpperCase() + duration.slice(1) : "All" %> Goals</h2>
@@ -32,8 +30,7 @@
   <% } else { %>
     <p>No goals found for this duration.</p>
   <% } %>
-
   <br />
-  <a href="/goals">⬅ Back to All Goals</a>
+  <a href="/goals">Back to All Goals</a>
 </body>
 </html>

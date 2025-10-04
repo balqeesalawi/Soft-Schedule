@@ -1,18 +1,17 @@
 <h1>Edit Goal</h1>
 
-<form action="/goals/<%= goal._id %>" method="POST">
-
-  <label for="duration">Duration:</label>
+<form action="/goals/<%= goal._id %>?_method=PUT" method="POST">
+  <label>Goal:</label>
+  <input type="text" name="goal" value="<%= goal.goal %>" required />
+  <br/>
+  <label>Duration:</label>
   <select name="duration" required>
     <option value="week" <%= goal.duration === "week" ? "selected" : "" %>>Week</option>
     <option value="month" <%= goal.duration === "month" ? "selected" : "" %>>Month</option>
     <option value="year" <%= goal.duration === "year" ? "selected" : "" %>>Year</option>
   </select>
-  <br />
-
-  <label>Goal:</label>
-  <input type="text" name="goal" value="<%= goal.goal %>" />
-  <br />
-
+  <br/>
   <button type="submit">Update Goal</button>
 </form>
+
+<a href="/goals">Back to Goals</a>

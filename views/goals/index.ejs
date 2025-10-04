@@ -2,26 +2,45 @@
 
 <form action="/goals/filter" method="GET">
   <label>Filter by Duration:</label>
-  <select name="duration">
-    <option value="">All</option>
+  <select name="duration" onchange="this.form.submit()">
+    <option value="all" <%= selectedDuration === "all" ? "selected" : "" %>>All</option>
+    <option value="week" <%= selectedDuration === "week" ? "selected" : "" %>>Week</option>
+    <option value="month" <%= selectedDuration === "month" ? "selected" : "" %>>Month</option>
+    <option value="year" <%= selectedDuration === "year" ? "selected" : "" %>>Year</option>
+  </select>
+</form>
+
+
+<h2>Add New Goal</h2>
+<form action="/goals" method="POST">
+  <select name="duration" required>
     <option value="week">Week</option>
     <option value="month">Month</option>
     <option value="year">Year</option>
   </select>
-  <button type="submit">Filter</button>
+  <input type="text" name="goal" placeholder="Write your goal..." required />
+  <button type="submit">Add Goal</button>
 </form>
 
-<!-- <ul>
-  <% goals.forEach(goal => { %>
-    <li><%= goal.goal %> - <%= goal.duration %></li>
-  <% }) %>
-</ul> -->
 
 <ul>
   <% goals.forEach(goal => { %>
     <li>
       <%= goal.goal %> - <%= goal.duration %>
-      <a href="/goals/<%= goal._id %>/edit">Edit</a>
+
+      <form action="/goals/<%= goal._id %>?_method=PUT" method="POST">
+        <input type="text" name="goal" value="<%= goal.goal %>" required />
+        <select name="duration">
+          <option value="week" <%= goal.duration === "week" ? "selected" : "" %>>Week</option>
+          <option value="month" <%= goal.duration === "month" ? "selected" : "" %>>Month</option>
+          <option value="year" <%= goal.duration === "year" ? "selected" : "" %>>Year</option>
+        </select>
+        <button type="submit">Update</button>
+      </form>
+
+      <form action="/goals/<%= goal._id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete</button>
+      </form>
     </li>
   <% }) %>
 </ul>
