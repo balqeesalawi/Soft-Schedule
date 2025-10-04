@@ -1,3 +1,10 @@
 <%- include("../partials/_navbar.ejs") %>
 
+<h1><%=reader.title %></h1>
 
+
+<% if(reader.isDoneReading) {%>
+<p>Great! you have finished Reading, keep up the good work!</p>
+<%} else {%>
+<p>You can do it! just few more pages!</p>
+<%}%>
