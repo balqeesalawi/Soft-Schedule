@@ -1,0 +1,20 @@
+<%- include("../partials/_navbar.ejs") %>
+
+<h1>Add books</h1>
+
+<form action="/books" method="post">
+  <label for="title">Book Title</label>
+  <input type="text" name="title" id="title">
+  <br>
+
+  <label for="numOfPages">Number of pages</label>
+  <input type="number" name="numOfPages" id="numOfPages">
+  <br>
+
+  <label for="pagesPerDay">Pages Per Day</label>
+  <input type="number" name="pagesPerDay" id="pagesPerDay">
+  <br>
+
+  <label for="isDoneReading">Done Reading</label>
+  <button type="submit">New book</button>
+</form>

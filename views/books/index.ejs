@@ -1,0 +1,15 @@
+<%- include("../partials/_navbar.ejs") %>
+
+<h1>All books</h1>
+
+<ul>
+  <% reader.forEach((list, index)=>{ %>
+    
+<a href="/books/<%=list._id%>"></a>
+  <li>
+    <%=list.title%>
+    reading <%=list.numOfPages%> pages to
+    <%=list.pagesPerDay%> per day
+  </li>
+  <% }) %>
+</ul>

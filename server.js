@@ -32,10 +32,13 @@ const mongoose = require("./config/db")
 app.get("/", (req, res) => {
   res.render("index.ejs")
 })
-
+//require routes
 const authRouter = require("./routes/auth.js")
+const bookRouter = require("./routes/books")
+//use routes
 app.use("/auth", authRouter)
-
+app.use("/books", bookRouter)
+//port
 const port = process.env.PORT ? process.env.PORT : 3000
 app.listen(port, () => {
   console.log("The app is listening")
