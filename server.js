@@ -35,6 +35,7 @@ app.get("/", (req, res) => {
 //require routes
 const authRouter = require("./routes/auth.js")
 const bookRouter = require("./routes/books")
+
 //use routes
 app.use("/auth", authRouter)
 app.use("/books", bookRouter)

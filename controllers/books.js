@@ -23,7 +23,7 @@ exports.Book_create_post = async (req, res) => {
  exports.Book_show_get = async (req, res)=>{
 const reader = await book.findById(req.params.BookId)
 res.render("books/show.ejs")
-}
+} 
 
 // //exports.Book_edit_get = async (req, res) =>{
   //
