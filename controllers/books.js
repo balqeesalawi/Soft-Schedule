@@ -35,17 +35,18 @@ exports.Book_edit_get = async (req, res) => {
 }
 
 exports.Book_update_put = async (req, res) => {
-  const reader = await Book.findById(req.params.booksId)
   if (req.body.isDoneReading === "on") {
     req.body.isDoneReading = true
   } else {
     req.body.isDoneReading = false
   }
-  await Book.findByIdAndUpdate(req.params.booksId, req.body)
+   const reader = await Book.findByIdAndUpdate(req.params.booksId)
+   reader.set(req.body)
+   await reader.save()
   res.redirect(`/books/${req.params.booksId}`)
 }
 
 exports.Book_delete = async (req, res) => {
-  const reader = await Book.findByIdAndDelete(req.params.booksId).deleteOne()
+  const reader = await Book.findByIdAndDelete(req.params.booksId)
   res.redirect("/books")
 }
