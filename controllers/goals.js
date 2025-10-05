@@ -30,10 +30,9 @@ exports.goals_filter_get = async (req, res) => {
   const { duration } = req.query
   const filter = { owner: req.session.user._id }
 
-  if (duration && duration !== "all") {
+  if (duration && duration !== "all"){
     filter.duration = duration
   }
-
   const goals = await Goal.find(filter)
   res.render("goals/index.ejs", { goals, selectedDuration: duration || "all" })
 }
