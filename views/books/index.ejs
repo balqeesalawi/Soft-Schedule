@@ -8,9 +8,55 @@
 <a href="/books/<%=list._id%>">
   <li>
     <%=list.title%>
-   
   </li>
 </a>
   <% }) %>
 </ul>
 
+
+<button id="openUp">open reminder</button>
+<div id="block ">
+  <div class="box">
+    <button id="close-popUp">close</button>
+  </div>
+</div>
+
+<style>
+.block {
+background-color: rgb(120, 152, 180);
+opacity: 0;
+position: fixed;
+top: 0;
+right: 0;
+bottom:0;
+left: 0;
+display: flex;
+
+
+}
+</style>
+<script>
+
+const reminder = document.querySelector("#openUp")
+const closeBtn = document.querySelector("#close-popUp")
+const block = document.querySelector("#block")
+const reader = null
+const isDoneReading = null
+const pagesPerDay = null
+const numOfPages = null
+
+
+if(reader.isDoneReading >= reader.pagesPerDay && reader.pagesPerDay === numOfPages){
+ return ("congrats! you have finished reading")
+ reminder.addEventListener("click", ()=>{
+  block.style.opacity = 1
+})
+
+} else {
+  return("you Haven't finished reading! you need to read 10 more pages today!(:")
+}
+
+
+closeBtn.addEventListener("click", ()=>{
+  block.classList.remove("open")
+})
