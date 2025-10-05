@@ -37,17 +37,15 @@ app.get("/", (req, res) => {
 //require routes
 const authRouter = require("./routes/auth.js")
 const bookRouter = require("./routes/books")
-
+const taskRouter = require('./routes/task.js')
+const goalsRoutes = require("./routes/goals")
 //use routes
 app.use("/auth", authRouter)
-app.use("/books", bookRouter)
-//port
-const taskRouter = require('./routes/task.js')
+app.use("/books", isSignedIn, bookRouter)
 app.use('/tasks', isSignedIn ,taskRouter)
+app.use("/goals", isSignedIn, goalsRoutes)
 
-const goalsRoutes = require("./routes/goals")
-app.use("/goals", goalsRoutes)
-
+//port
 const port = process.env.PORT ? process.env.PORT : 3000
 app.listen(port, () => {
   console.log("The app is listening ")

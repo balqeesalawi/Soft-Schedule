@@ -26,7 +26,7 @@
 <ul>
   <% goals.forEach(goal => { %>
     <li>
-      <!-- <%= goal.goal %> - <%= goal.duration %> -->
+      <%= goal.goal %> - <%= goal.duration %>
 
       <form action="/goals/<%= goal._id %>?_method=PUT" method="POST">
         <input type="checkbox" name="isCompleted" <%= goal.isCompleted ? "checked" : "" %>>
