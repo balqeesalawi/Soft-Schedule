@@ -2,19 +2,53 @@
 
     <h1>All Tasks</h1>
 
-    <a href="/tasks/new">Add New Task</a>
+    <h2>Add New Task</h2>
+    <form action="/tasks" method="post">
+<label for="date">Date</label>
+<input type="date" name="date" id="date">
+
+<label for="time">Time</label>
+<input type="time" name="time" id="time">
+
+<label for="task">Task</label>
+<input type="text" name="task" id="task">
+
+<label for="isDone">isDone?</label>
+<input type="checkbox" name="isDone" id="isDone">
+
+<button type="submit">Add Task</button>
+
+</form>
 
     <ul>
         <%tasks.forEach(task=> {%>
 
             <li>
                 
-                <%= task.date %>
-                <%= task.time %>
-                
-                 <a href="/tasks/<%= task._id %>">
-                      <%= task.task %>
-                </a>
+                <form action="/tasks/<%= task._id %>?_method=PUT" method="post">
+                    <input type="checkbox" name="isDone" id="isDone" 
+    <% if(task.isDone) { %>
+        checked
+        
+>
+<% } %>
+<label for="date"></label>
+<input type="date" name="date" id="date" value="<%= task.date %>">
+
+<label for="time"></label>
+<input type="time" name="time" id="time" value="<%= task.time %>">
+
+<label for="task"></label>
+<input type="text" name="task" id="task" value="<%= task.task %>">
+
+<label for="isDone"></label>
+
+<button type="submit">Edit Task</button>
+
+</form>
+<form action="/tasks/<%= task._id %>?_method=DELETE" method="post">
+    <button type="submit">Delete Task</button>
+ </form>
                 
             </li>
             <%})%>

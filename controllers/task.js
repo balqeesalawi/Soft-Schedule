@@ -6,7 +6,7 @@ exports.task_index_get = async (req, res) => {
 }
 
 exports.task_create_get = async (req, res)=> {
-    res.render('tasks/new.ejs')
+    res.redirect('/tasks')
 }
 
 exports.task_create_post = async (req, res)=> {
@@ -41,7 +41,7 @@ exports.task_update_put = async (req,res)=> {
     const task = await ToDo.findByIdAndUpdate(req.params.taskId)
     task.set(req.body)
     await task.save()
-    res.redirect(`/tasks/${req.params.taskId}`)
+    res.redirect(`/tasks`)
 }
 
 
