@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Filter Goals</title>
+</head>
+<body>
+  <h1>Filter Goals by Duration</h1>
+
+  <form action="/goals/filter" method="GET">
+    <label>Select Duration:</label>
+    <select name="duration">
+      <option value="" <%= !duration ? "selected" : "" %>>All</option>
+      <option value="week" <%= duration==="week" ? "selected" : "" %>>Week</option>
+      <option value="month" <%= duration==="month" ? "selected" : "" %>>Month</option>
+      <option value="year" <%= duration==="year" ? "selected" : "" %>>Year</option>
+    </select>
+    <button type="submit">Show</button>
+  </form>
+
+
+  <% if (goals.length > 0) { %>
+    <h2><%= duration ? duration.charAt(0).toUpperCase() + duration.slice(1) : "All" %> Goals</h2>
+    <ul>
+      <% goals.forEach(goal => { %>
+        <li>
+          <%= goal.goal %>: (Duration: <%= goal.duration %>)
+        </li>
+      <% }) %>
+    </ul>
+  <% } else { %>
+    <p>No goals found for this duration.</p>
+  <% } %>
+  <br />
+  <a href="/goals">Back to All Goals</a>
+</body>
+</html>

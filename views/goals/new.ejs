@@ -1,0 +1,17 @@
+<h1>New Goal</h1>
+
+<form action="/goals" method="POST">
+  <label for="duration">Duration:</label>
+  <select name="duration" required>
+    <option value="week">Week</option>
+    <option value="month">Month</option>
+    <option value="year">Year</option>
+  </select>
+  <br />
+
+  <label>Goal:</label>
+  <input type="text" name="goal" placeholder="Write your goal..." />
+  <br />
+
+  <button type="submit">Create Goal</button>
+</form>

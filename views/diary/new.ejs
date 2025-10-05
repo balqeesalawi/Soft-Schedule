@@ -1,0 +1,24 @@
+<h1>New Diary Entry</h1>
+
+<form action="/diary" method="POST">
+  <label>Mood:</label>
+  <select name="mood" required>
+    <option value="Happy">😀 Happy</option>
+    <option value="Sad">😢 Sad</option>
+    <option value="Angry">😡 Angry</option>
+    <option value="Relaxed">😌 Relaxed</option>
+    <option value="Anxious">😔 Anxious</option>
+    <option value="Excited">😍 Excited</option>
+    <option value="Tired">😴 Tired</option>
+    <option value="Thoughtful">🤔 Thoughtful</option>
+    <option value="Confident">😎 Confident</option>
+    <option value="Frustrated">😭 Frustrated</option>
+  </select>
+  <br />
+
+  <label>Diary Text:</label><br />
+  <textarea name="text" placeholder="What's Happening Today?"></textarea>
+  <br />
+
+  <button type="submit">Save Entry</button>
+</form>
