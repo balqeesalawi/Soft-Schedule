@@ -1,0 +1,21 @@
+<%- include("../partials/_navbar.ejs") %>
+
+    <h1>All Tasks</h1>
+
+    <a href="/tasks/new">Add New Task</a>
+
+    <ul>
+        <%tasks.forEach(task=> {%>
+
+            <li>
+                
+                <%= task.date %>
+                <%= task.time %>
+                
+                 <a href="/tasks/<%= task._id %>">
+                      <%= task.task %>
+                </a>
+                
+            </li>
+            <%})%>
+    </ul>
