@@ -42,6 +42,9 @@ const bookRouter = require("./routes/books")
 app.use("/auth", authRouter)
 app.use("/books", bookRouter)
 //port
+const taskRouter = require('./routes/task.js')
+app.use('/tasks', isSignedIn ,taskRouter)
+
 const port = process.env.PORT ? process.env.PORT : 3000
 app.listen(port, () => {
   console.log("The app is listening")
