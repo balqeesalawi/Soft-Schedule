@@ -15,8 +15,8 @@
 
 
 <button id="openUp">open reminder</button>
-<div id="block ">
-  <div class="box">
+<div class="block ">
+  <div id="box">
     <button id="close-popUp">close</button>
   </div>
 </div>
@@ -60,3 +60,13 @@ if(reader.isDoneReading >= reader.pagesPerDay && reader.pagesPerDay === numOfPag
 closeBtn.addEventListener("click", ()=>{
   block.classList.remove("open")
 })
+
+// reminder.addEventListener("click", ()=>{
+//   if(reader.isDoneReading >= reader.pagesPerDay && reader.pagesPerDay === numOfPages){
+//     return ("congrats! you have finished reading")
+//   } else {
+//     return("you Haven't finished reading! you need to read 10 more pages today!(:")
+
+//   }
+//   block.classList.add("open")
+// })
