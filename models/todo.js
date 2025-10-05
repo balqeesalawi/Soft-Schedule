@@ -1,12 +1,16 @@
 const mongoose = require('mongoose')
 
 const todoSchema = new mongoose.Schema({
+    date: {
+        type: String,
+        required: true
+    },
     task: {
         type: String,
         required: true
     },
     time: {
-        type: Number,
+        type: String,
         required: true
     },
     isDone: {

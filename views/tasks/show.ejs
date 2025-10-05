@@ -1,0 +1,17 @@
+<%- include("../partials/_navbar.ejs") %>
+
+<h1><%= task.task %></h1>
+
+<p><%= task.date %></p>
+<p><%= task.time %></p>
+<% if( task.isDone ){ %>
+    <p>This task is done</p>
+    <%} else {%>
+        <p>This task is not done yet</p>
+        <% } %>
+
+ <a href="/tasks/<%= task._id %>/edit">Edit Task</a>    
+ 
+ <form action="/tasks/<%= task._id %>?_method=DELETE" method="post">
+    <button type="submit">Delete Task</button>
+ </form>
