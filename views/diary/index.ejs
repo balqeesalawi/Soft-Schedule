@@ -1,0 +1,21 @@
+<h1>Your Diary</h1>
+
+<a href="/diary/new">Add New Diary</a>
+
+<ul>
+  <% diaries.forEach(diary => { %>
+  <li>
+    <label for="date">Date:</label>
+   <%= diary.date %> <br>
+    <label for="mood">Mood:</label>
+    <%= diary.mood %> <br>
+    <%= diary.text %>
+    <br />
+    <a href="/diary/<%= diary._id %>/edit">Edit</a>
+
+    <form action="/diary/<%= diary._id %>?_method=DELETE" method="POST">
+      <button type="submit">Delete</button>
+    </form>
+  </li>
+  <% }) %>
+</ul>
