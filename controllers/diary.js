@@ -3,7 +3,7 @@ const Diary = require("../models/diary")
 //API's
 
 exports.diary_index_get = async (req, res) => {
- const diaries = await Diary.find({ owner: req.session.user._id })
+  const diaries = await Diary.find({ owner: req.session.user._id })
   res.render("diary/index.ejs", { diaries })
 }
 
@@ -21,7 +21,7 @@ exports.diary_create_post = async (req, res) => {
     text: req.body.text,
     mood: req.body.mood,
     owner: req.body.owner,
-    date: req.body.date ,
+    date: req.body.date,
   })
 
   res.redirect("/diary")
@@ -38,7 +38,7 @@ exports.diary_update_put = async (req, res) => {
     await Diary.updateOne({
       text: req.body.text,
       mood: req.body.mood,
-      date: req.body.date
+      date: req.body.date,
     })
     res.redirect("/diary")
   } else {
@@ -47,17 +47,14 @@ exports.diary_update_put = async (req, res) => {
 }
 
 exports.diary_delete = async (req, res) => {
-  const diary = await Diary.findById(req.params.diaryId)
-  if (!diary) return res.send("Diary not found")
-  if (diary.owner.equals(req.session.user._id)) {
-    await diary.deleteOne()
-    res.redirect("/diary")
-  } else {
-    res.send("You don't have permission to do that")
-  }
+  const diary = await Diary.findByIdAndDelete(req.params.diaryId)
+  res.redirect("/diary")
 }
 
-exports.diary_filter_post = async (req, res)=> {
-  const diaries = await Diary.find({date: req.body.date})
-    res.render('diary/index.ejs', {diaries})
+exports.diary_filter_post = async (req, res) => {
+  let diaries = await Diary.find({ date: req.body.date })
+  if (!req.body.date) {
+    diaries = await Diary.find({ id: req.body.diaryId })
+  }
+  res.render("diary/index.ejs", { diaries })
 }
