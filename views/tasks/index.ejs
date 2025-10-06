@@ -1,6 +1,11 @@
 <%- include("../partials/_navbar.ejs") %>
 
-    <h1>All Tasks</h1>
+    
+    <form action="/tasks/filter" method="post">
+        <label for="date">Filter by Duration</label>
+        <input type="date" name="date" id="date">
+        <button type="submit">Filter</button>
+    </form>
 
     <h2>Add New Task</h2>
     <form action="/tasks" method="post">
@@ -19,7 +24,7 @@
 <button type="submit">Add Task</button>
 
 </form>
-
+<h1>All Tasks</h1>
     <ul>
         <%tasks.forEach(task=> {%>
 

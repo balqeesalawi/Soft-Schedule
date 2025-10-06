@@ -49,3 +49,14 @@ exports.task_delete = async (req, res)=> {
    await ToDo.findByIdAndDelete(req.params.taskId)
    res.redirect('/tasks') 
 }
+
+exports.task_filter_post = async (req, res)=> {
+    
+    let tasks = await ToDo.find({date: req.body.date})
+    if(!req.body.date){
+        tasks = await ToDo.find({id: req.body.taskId})
+    }
+    res.render('tasks/index.ejs', {tasks})
+    
+}
+

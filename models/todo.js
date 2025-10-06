@@ -20,6 +20,7 @@ const todoSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     }
+
 })
 
 const ToDo = mongoose.model('ToDo', todoSchema)
