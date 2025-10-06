@@ -14,54 +14,53 @@
 </ul>
 
 
-<button id="openUp">open reminder</button>
 <div class="block ">
-  <div id="box">
-    <button id="close-popUp">close</button>
-  </div>
+  <button id="openUp">open reminder</button>
+  <p>congrats! you have finished reading</p>
+  <button id="close-popUp">close</button>
 </div>
 
 <style>
 .block {
 background-color: rgb(120, 152, 180);
-opacity: 0;
-position: fixed;
-top: 0;
-right: 0;
-bottom:0;
-left: 0;
-display: flex;
+visibility: hidden;
 
 
 }
 </style>
 <script>
+axios.get("http://localhost:3000/books")
 
 const reminder = document.querySelector("#openUp")
 const closeBtn = document.querySelector("#close-popUp")
-const block = document.querySelector("#block")
-const reader = null
+const block = document.querySelector(".block")
+const reader = axios
 const isDoneReading = null
 const pagesPerDay = null
 const numOfPages = null
 
+console.log("hello i am workinggg")
 
-if(reader.isDoneReading >= reader.pagesPerDay && reader.pagesPerDay === numOfPages){
- return ("congrats! you have finished reading")
- reminder.addEventListener("click", ()=>{
-  block.style.opacity = 1
+closeBtn.addEventListener("click", ()=> {
+  block.style.visibility= "hidden"
 })
 
-} else {
-  return("you Haven't finished reading! you need to read 10 more pages today!(:")
-}
+reader.forEach(list => {
+if(list.isDoneReading){
+  block.style.visibility = "visible"}
+});
 
+// if(reader.isDoneReading >= reader.pagesPerDay && reader.pagesPerDay == numOfPages){
+//   block.style.visibility = "visible"
+//  return ("congrats! you have finished reading")
+//  reminder.addEventListener("click", ()=> {
+//   block.style.opacity = 1
+// })
 
-closeBtn.addEventListener("click", ()=>{
-  block.classList.remove("open")
-})
-
-// reminder.addEventListener("click", ()=>{
+// } else {
+//   return("you Haven't finished reading! you need to read 10 more pages today!(:")
+// }
+ // reminder.addEventListener("click", ()=>{
 //   if(reader.isDoneReading >= reader.pagesPerDay && reader.pagesPerDay === numOfPages){
 //     return ("congrats! you have finished reading")
 //   } else {
@@ -70,3 +69,6 @@ closeBtn.addEventListener("click", ()=>{
 //   }
 //   block.classList.add("open")
 // })
+</script>
+
+
