@@ -1,8 +1,6 @@
 const Goal = require("../models/goal")
 
 exports.goals_index_get = async (req, res) => {
-  if (!req.session.user) return res.send("You must be logged in")
-
   const goals = await Goal.find({ owner: req.session.user._id }).populate(
     "owner"
   )
@@ -25,8 +23,6 @@ exports.goals_create_post = async (req, res) => {
 }
 
 exports.goals_filter_get = async (req, res) => {
-  if (!req.session.user) return res.send("You must be logged in")
-
   const { duration } = req.query
   const filter = { owner: req.session.user._id }
 
@@ -43,10 +39,6 @@ exports.goals_edit_get = async (req, res) => {
 }
 
 exports.goal_update_put = async (req, res) => {
-  if (!req.session.user) {
-    return res.send("You must be logged in")
-  }
-
   const currentGoal = await Goal.findById(req.params.goalId)
 
   req.body.isCompleted = req.body.isCompleted === "on"
@@ -60,9 +52,6 @@ exports.goal_update_put = async (req, res) => {
 }
 
 exports.goals_delete = async (req, res) => {
-  if (!req.session.user) {
-    return res.send("You must be logged in to delete a goal")
-  }
   const goal = await Diary.findByIdAndDelete(req.params.goalId)
   res.redirect("/goal")
 }

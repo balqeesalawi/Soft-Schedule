@@ -1,7 +1,6 @@
 const Diary = require("../models/diary")
 
 //API's
-
 exports.diary_index_get = async (req, res) => {
   const diaries = await Diary.find({ owner: req.session.user._id })
   res.render("diary/index.ejs", { diaries })
@@ -34,16 +33,12 @@ exports.diary_edit_get = async (req, res) => {
 
 exports.diary_update_put = async (req, res) => {
   const currentDiary = await Diary.findById(req.params.diaryId)
-  if (currentDiary.owner.equals(req.session.user._id)) {
-    await Diary.updateOne({
-      text: req.body.text,
-      mood: req.body.mood,
-      date: req.body.date,
-    })
-    res.redirect("/diary")
-  } else {
-    res.send("You don't have permission to do that.")
-  }
+  await Diary.updateOne({
+    text: req.body.text,
+    mood: req.body.mood,
+    date: req.body.date,
+  })
+  res.redirect("/diary")
 }
 
 exports.diary_delete = async (req, res) => {
