@@ -56,3 +56,8 @@ exports.diary_delete = async (req, res) => {
     res.send("You don't have permission to do that")
   }
 }
+
+exports.diary_filter_post = async (req, res)=> {
+  const diaries = await Diary.find({date: req.body.date})
+    res.render('diary/index.ejs', {diaries})
+}

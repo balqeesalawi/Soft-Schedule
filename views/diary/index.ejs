@@ -1,14 +1,21 @@
+<%- include("../partials/_navbar.ejs") %>
+
 <h1>Your Diary</h1>
 
+<form action="/diary/filter" method="post">
+  <label for="date">Filter by Duration</label>
+  <input type="date" name="date" id="date" />
+  <button type="submit">Filter</button>
+</form>
 <a href="/diary/new">Add New Diary</a>
 
 <ul>
   <% diaries.forEach(diary => { %>
   <li>
     <label for="date">Date:</label>
-   <%= diary.date %> <br>
+    <%= diary.date %> <br />
     <label for="mood">Mood:</label>
-    <%= diary.mood %> <br>
+    <%= diary.mood %> <br />
     <%= diary.text %>
     <br />
     <a href="/diary/<%= diary._id %>/edit">Edit</a>
