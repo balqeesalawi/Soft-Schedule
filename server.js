@@ -40,7 +40,7 @@ const bookRouter = require("./routes/books")
 const taskRouter = require('./routes/task.js')
 const goalsRoutes = require("./routes/goals")
 //use routes
-app.use("/auth", authRouter)
+app.use("/auth",authRouter)
 app.use("/books", isSignedIn, bookRouter)
 app.use('/tasks', isSignedIn ,taskRouter)
 app.use("/goals", isSignedIn, goalsRoutes)

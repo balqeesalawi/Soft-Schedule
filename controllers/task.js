@@ -1,12 +1,13 @@
 const ToDo = require('../models/todo')
 
 exports.task_index_get = async (req, res) => {
-    const tasks = await ToDo.find().populate('owner')
+    const tasks = await ToDo.find({owner: req.session.user._id})
     res.render('tasks/index.ejs', {tasks})
 }
 
 exports.task_create_get = async (req, res)=> {
-    res.redirect('/tasks')
+    const tasks = await ToDo.find({owner: req.session.user._id}).populate("owner")
+    res.redirect('/tasks', {tasks})
 }
 
 exports.task_create_post = async (req, res)=> {
@@ -52,9 +53,11 @@ exports.task_delete = async (req, res)=> {
 
 exports.task_filter_post = async (req, res)=> {
     
-    let tasks = await ToDo.find({date: req.body.date})
+    let tasks = await ToDo.find({
+        owner: req.session.user._id,
+        date: req.body.date})
     if(!req.body.date){
-        tasks = await ToDo.find({id: req.body.taskId})
+        tasks = await ToDo.find({owner: req.session.user._id})
     }
     res.render('tasks/index.ejs', {tasks})
     
