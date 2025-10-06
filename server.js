@@ -31,6 +31,8 @@ app.use((req, res, next) => {
 
 const mongoose = require("./config/db")
 
+
+
 app.get("/", (req, res) => {
   res.render("index.ejs")
 })
@@ -39,11 +41,14 @@ const authRouter = require("./routes/auth.js")
 const bookRouter = require("./routes/books")
 const taskRouter = require('./routes/task.js')
 const goalsRoutes = require("./routes/goals")
+const apiRouter = require("./routes/api")
+
 //use routes
 app.use("/auth", authRouter)
 app.use("/books", isSignedIn, bookRouter)
 app.use('/tasks', isSignedIn ,taskRouter)
 app.use("/goals", isSignedIn, goalsRoutes)
+app.use('/', isSignedIn, apiRouter)
 
 //port
 const port = process.env.PORT ? process.env.PORT : 3000
