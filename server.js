@@ -43,11 +43,13 @@ const taskRouter = require('./routes/task.js')
 const goalsRoutes = require("./routes/goals")
 
 
+const diaryRoutes = require("./routes/diary")
 //use routes
-app.use("/auth", authRouter)
+app.use("/auth",authRouter)
 app.use("/books", isSignedIn, bookRouter)
 app.use('/tasks', isSignedIn ,taskRouter)
 app.use("/goals", isSignedIn, goalsRoutes)
+app.use("/diary", isSignedIn, diaryRoutes)
 
 
 //port

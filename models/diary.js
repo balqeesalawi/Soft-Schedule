@@ -1,11 +1,12 @@
+const { text } = require('express')
 const mongoose = require('mongoose')
 
 const diarySchema = new mongoose.Schema({
     date: {
-        type: Date,
-        default: Date.now
+        type: String,
+        required: true
     },
-    notes: {
+    text: {
         type: String,
         required: true
     },
