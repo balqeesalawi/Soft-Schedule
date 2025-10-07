@@ -19,7 +19,8 @@ const todoSchema = new mongoose.Schema({
     owner: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
-    }
+    }, 
+
 })
 
 const ToDo = mongoose.model('ToDo', todoSchema)
