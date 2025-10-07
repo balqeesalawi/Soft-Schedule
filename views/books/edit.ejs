@@ -1,12 +1,12 @@
 <head>
-  <title><%= reader.title %></title>
+  <link rel="stylesheet" href="/stylesheets/book.css" />
 </head>
 
-<link rel="stylesheet" href="/stylesheets/" />
 <%- include("../partials/_navbar.ejs") %>
-
+<body>
 <h1>Edit your Book list</h1>
 
+<div class="edit-body">
 <form action="/books/<%= reader._id%>?_method=PUT" method="post">
   <label for="title">Book Title</label>
   <input type="text" name="title" id="title" value="<%= reader.title %>">
@@ -27,3 +27,5 @@
 
   <button type="submit">Update</button>
 </form>
+</div>
+</body>

@@ -5,10 +5,6 @@ body {
   background-color: #ececec;
   color: #fff;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 .home-h1 {

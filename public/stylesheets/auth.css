@@ -1,0 +1,22 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #8a7c7c;
+  color: #bb1010;
+  min-height: 100vh;
+}
+
+.signin-container,
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.sinInbtn,
+.sinUpbtn {
+  color: rgb(130, 38, 148);
+}
+

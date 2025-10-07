@@ -1,5 +1,11 @@
-<link rel="stylesheet" href="/stylesheets/" />
+<head>
+
+  <link rel="stylesheet" href="/stylesheets/auth.css"/>
+</head>
+
 <%- include("../partials/_navbar.ejs") %>
+
+<div class="signup-container">
 <h1>Create New Account</h1>
 
 <form action="/auth/sign-up" method="post">
@@ -16,6 +22,6 @@
     <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password">
     <br>
 
-    <button type="submit">Sign Up</button>
+    <button class="sinUpbtn" type="submit">Sign Up</button>
 </form>
-
+</div>

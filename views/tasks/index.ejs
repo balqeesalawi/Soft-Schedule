@@ -31,7 +31,7 @@
   <li>
     <form action="/tasks/<%= task._id %>?_method=PUT" method="post">
       <input type="checkbox" name="isDone" id="isDone" <% if(task.isDone) { %> />
-       checked  <% } %>
+      /> checked > <% } %>
       <label for="date"></label>
       <input type="date" name="date" id="date" value="<%= task.date %>" />
 

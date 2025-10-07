@@ -1,9 +1,13 @@
-<link rel="stylesheet" href="/stylesheets/" />
+<head>
+  <link rel="stylesheet" href="/stylesheets/book.css" />
+</head>
 <%- include("../partials/_navbar.ejs") %>
 
-<h1>All books</h1>
 
-<ul>
+<body>
+<h1>All books</h1>
+<div class="index-div">
+  <ul>
   <% reader.forEach((list, index)=>{ %>
 
 <a href="/books/<%=list._id%>">
@@ -14,3 +18,5 @@
   <% }) %>
 </ul>
 <a href="/books/new">Add a New Book</a>
+</div>
+</body>

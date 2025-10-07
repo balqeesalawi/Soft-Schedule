@@ -1,8 +1,10 @@
-<link rel="stylesheet" href="/stylesheets/" />
+<head>
+  <link rel="stylesheet" href="/stylesheets/book.css" />
+</head>
 <%- include("../partials/_navbar.ejs") %>
-
+<body>
 <h1>Add books</h1>
-
+<div class="new-body">
 <form action="/books" method="post">
   <label for="title">Book Title</label>
   <input type="text" name="title" id="title">
@@ -22,3 +24,6 @@
 
   <button type="submit">Add book</button>
 </form>
+</div>
+</body>
+
