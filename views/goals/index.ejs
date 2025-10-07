@@ -1,13 +1,16 @@
+<%- include("../partials/_navbar.ejs") %>
+
 <h1>Your Goals</h1>
 
-<form action="/goals/filter" method="GET">
+<form action="/goals/filter" method="get">
   <label>Filter by Duration:</label>
-  <select name="duration" onchange="this.form.submit()">
+  <select name="duration">
     <option value="all" <%= selectedDuration === "all" ? "selected" : "" %>>All</option>
     <option value="week" <%= selectedDuration === "week" ? "selected" : "" %>>Week</option>
     <option value="month" <%= selectedDuration === "month" ? "selected" : "" %>>Month</option>
     <option value="year" <%= selectedDuration === "year" ? "selected" : "" %>>Year</option>
   </select>
+  <button type="submit">Filter</button>
 </form>
 
 

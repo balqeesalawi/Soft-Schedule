@@ -1,0 +1,26 @@
+<%- include("./partials/_navbar.ejs") %>
+
+<h1>Edit Diary Entry</h1>
+
+<form action="/diary/<%= diary._id %>?_method=PUT" method="POST">
+  <label>Mood:</label>
+  <select name="mood">
+    <option value="Happy" <%= diary.mood === "Happy" ? "selected" : "" %>>Happy</option>
+    <option value="Sad" <%= diary.mood === "Sad" ? "selected" : "" %>>Sad</option>
+    <option value="Angry" <%= diary.mood === "Angry" ? "selected" : "" %>>Angry</option>
+    <option value="Relaxed" <%= diary.mood === "Relaxed" ? "selected" : "" %>>Relaxed</option>
+  </select>
+  <br />
+  <label>Date</label>
+  <input type="date" name="date" id="date" value="<%= diary.date %>">
+<br>
+  <label>Diary Text:</label><br />
+  <textarea name="text"><%= diary.text %></textarea>
+  <br />
+
+  <button type="submit">Update</button>
+</form>
+
+<form action="/diary/<%= diary._id %>?_method=DELETE" method="POST">
+  <button type="submit">Delete</button>
+</form>

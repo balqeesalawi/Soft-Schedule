@@ -1,8 +1,6 @@
 const Goal = require("../models/goal")
 
 exports.goals_index_get = async (req, res) => {
-  if (!req.session.user) return res.send("You must be logged in")
-
   const goals = await Goal.find({ owner: req.session.user._id }).populate(
     "owner"
   )
@@ -25,15 +23,12 @@ exports.goals_create_post = async (req, res) => {
 }
 
 exports.goals_filter_get = async (req, res) => {
-  if (!req.session.user) return res.send("You must be logged in")
-
   const { duration } = req.query
   const filter = { owner: req.session.user._id }
 
   if (duration && duration !== "all") {
     filter.duration = duration
   }
-
   const goals = await Goal.find(filter)
   res.render("goals/index.ejs", { goals, selectedDuration: duration || "all" })
 }
@@ -44,38 +39,19 @@ exports.goals_edit_get = async (req, res) => {
 }
 
 exports.goal_update_put = async (req, res) => {
-  if (!req.session.user) {
-    return res.send("You must be logged in")
-  }
-
   const currentGoal = await Goal.findById(req.params.goalId)
 
-  if (currentGoal.owner.equals(req.session.user._id)) {
+  req.body.isCompleted = req.body.isCompleted === "on"
 
-    req.body.isCompleted = req.body.isCompleted === "on"
-
-    await currentGoal.updateOne({
-      goal: req.body.goal,
-      duration: req.body.duration,
-      isCompleted: req.body.isCompleted
-    })
-    res.redirect("/goals")
-  } else {
-    res.send("You don't have permission to do that.")
-  }
+  await currentGoal.updateOne({
+    goal: req.body.goal,
+    duration: req.body.duration,
+    isCompleted: req.body.isCompleted,
+  })
+  res.redirect("/goals")
 }
 
 exports.goals_delete = async (req, res) => {
-  if (!req.session.user) {
-    return res.send("You must be logged in to delete a goal")
-  }
-  const goal = await Goal.findById(req.params.goalId)
-  if (!goal) return res.send("Goal not found")
-
-  if (goal.owner.equals(req.session.user._id)) {
-    await goal.deleteOne()
-    res.redirect("/goals")
-  } else {
-    res.send("You don't have permission to do that")
-  }
+  const goal = await Diary.findByIdAndDelete(req.params.goalId)
+  res.redirect("/goal")
 }
