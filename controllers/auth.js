@@ -48,6 +48,7 @@ exports.auth_signin_post = async (req, res) => {
   req.session.user = {
     username: userInDatabase.username,
     _id: userInDatabase._id,
+    picture: userInDatabase.picture,
   }
 
   res.redirect("/")
@@ -57,3 +58,5 @@ exports.auth_signout_get = async (req, res) => {
   req.session.destroy()
   res.redirect("/auth/sign-in")
 }
+
+

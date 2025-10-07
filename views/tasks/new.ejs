@@ -1,19 +1,19 @@
+<link rel="stylesheet" href="/stylesheets/" />
 <%- include("../partials/_navbar.ejs") %>
 
 <h1>My To Do List</h1>
 <form action="/tasks" method="post">
-<label for="date">Date</label>
-<input type="date" name="date" id="date">
-<br>
-<label for="time">Time</label>
-<input type="time" name="time" id="time">
-<br>
-<label for="task">Task</label>
-<input type="text" name="task" id="task">
-<br>
-<label for="isDone">isDone?</label>
-<input type="checkbox" name="isDone" id="isDone">
+  <label for="date">Date</label>
+  <input type="date" name="date" id="date" />
+  <br />
+  <label for="time">Time</label>
+  <input type="time" name="time" id="time" />
+  <br />
+  <label for="task">Task</label>
+  <input type="text" name="task" id="task" />
+  <br />
+  <label for="isDone">isDone?</label>
+  <input type="checkbox" name="isDone" id="isDone" />
 
-<button type="submit">Add Task</button>
-
+  <button type="submit">Add Task</button>
 </form>

@@ -1,60 +1,53 @@
+<link rel="stylesheet" href="/stylesheets/" />
+
 <%- include("../partials/_navbar.ejs") %>
 
-    
-    <form action="/tasks/filter" method="post">
-        <label for="date">Filter by Duration</label>
-        <input type="date" name="date" id="date">
-        <button type="submit">Filter</button>
-    </form>
+<form action="/tasks/filter" method="post">
+  <label for="date">Filter by Duration</label>
+  <input type="date" name="date" id="date" />
+  <button type="submit">Filter</button>
+</form>
 
-    <h2>Add New Task</h2>
-    <form action="/tasks" method="post">
-<label for="date">Date</label>
-<input type="date" name="date" id="date">
+<h2>Add New Task</h2>
+<form action="/tasks" method="post">
+  <label for="date">Date</label>
+  <input type="date" name="date" id="date" />
 
-<label for="time">Time</label>
-<input type="time" name="time" id="time">
+  <label for="time">Time</label>
+  <input type="time" name="time" id="time" />
 
-<label for="task">Task</label>
-<input type="text" name="task" id="task">
+  <label for="task">Task</label>
+  <input type="text" name="task" id="task" />
 
-<label for="isDone">isDone?</label>
-<input type="checkbox" name="isDone" id="isDone">
+  <label for="isDone">isDone?</label>
+  <input type="checkbox" name="isDone" id="isDone" />
 
-<button type="submit">Add Task</button>
-
+  <button type="submit">Add Task</button>
 </form>
 <h1>All Tasks</h1>
-    <ul>
-        <%tasks.forEach(task=> {%>
+<ul>
+  <% tasks.forEach(task=> { %>
 
-            <li>
-                
-                <form action="/tasks/<%= task._id %>?_method=PUT" method="post">
-                    <input type="checkbox" name="isDone" id="isDone" 
-    <% if(task.isDone) { %>
-        checked
-        
->
-<% } %>
-<label for="date"></label>
-<input type="date" name="date" id="date" value="<%= task.date %>">
+  <li>
+    <form action="/tasks/<%= task._id %>?_method=PUT" method="post">
+      <input type="checkbox" name="isDone" id="isDone" <% if(task.isDone) { %> />
+      /> checked > <% } %>
+      <label for="date"></label>
+      <input type="date" name="date" id="date" value="<%= task.date %>" />
 
-<label for="time"></label>
-<input type="time" name="time" id="time" value="<%= task.time %>">
+      <label for="time"></label>
+      <input type="time" name="time" id="time" value="<%= task.time %>" />
 
-<label for="task"></label>
-<input type="text" name="task" id="task" value="<%= task.task %>">
+      <label for="task"></label>
+      <input type="text" name="task" id="task" value="<%= task.task %>" />
 
-<label for="isDone"></label>
+      <label for="isDone"></label>
 
-<button type="submit">Edit Task</button>
-
-</form>
-<form action="/tasks/<%= task._id %>?_method=DELETE" method="post">
-    <button type="submit">Delete Task</button>
- </form>
-                
-            </li>
-            <%})%>
-    </ul>
+      <button type="submit">Edit Task</button>
+    </form>
+    <form action="/tasks/<%= task._id %>?_method=DELETE" method="post">
+      <button type="submit">Delete Task</button>
+    </form>
+  </li>
+  <%})%>
+</ul>

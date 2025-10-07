@@ -1,12 +1,13 @@
+<link rel="stylesheet" href="/stylesheets/" />
 <nav>
 <% if(user){%>
-<p>Welcome <%= user.username%> to the SoftSchedule App !</p>
-<a href="/auth/sign-out">Sign-Out</a>
-<a href="/tasks">My To-Do-List</a>
-<a href="/books">Books</a>
-<a href="/goals">Goal</a>
-<a href="/diary">Diaries</a>
-<a href="/user/<%= user._id %>">Profile</a>
+  <a href="/auth/sign-out">Sign-Out</a>
+  <a href="/tasks">My To-Do-List</a>
+  <a href="/books">Books</a>
+  <a href="/goals">Goal</a>
+  <a href="/diary">Diaries</a>
+  <a href="/user/<%= user._id %>/profile">Profile</a>
+  <!-- <p>Welcome <%= user.username%> to the SoftSchedule App !</p> -->
 
 <%} else { %>
  <p>welcome to the app guest!</p>
