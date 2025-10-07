@@ -1,5 +1,5 @@
 const axios = require("axios")
-const baseUrl = "../controllers/books.js"
+const baseUrl = "http://localhost:3000/books"
 
 exports.api_book_get = (req, res) =>{
   axios({
@@ -7,7 +7,7 @@ exports.api_book_get = (req, res) =>{
     url: baseUrl
   })
   .then(response => {
-    const result = response.data.req.session._id
+    const result = response.data.books
     res.render('books/index.ejs', {data: result})
 
   })
