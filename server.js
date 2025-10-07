@@ -9,7 +9,6 @@ app.use(methodOverride("_method"))
 
 const isSignedIn = require("./middleware/is-signed-in")
 
-
 require("dotenv").config()
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
@@ -22,6 +21,9 @@ app.use(
   })
 )
 
+const path = require("path")
+app.use(express.static(path.join(__dirname, "public")))
+
 const passUser = require("./middleware/passUser")
 app.use(passUser)
 app.use((req, res, next) => {
@@ -30,8 +32,7 @@ app.use((req, res, next) => {
 })
 
 const mongoose = require("./config/db")
-
-
+const upload = require("./middleware/upload")
 
 app.get("/", (req, res) => {
   res.render("index.ejs")
@@ -40,20 +41,18 @@ app.get("/", (req, res) => {
 const authRouter = require("./routes/auth.js")
 const userRouter = require("./routes/user.js")
 const bookRouter = require("./routes/books")
-const taskRouter = require('./routes/task.js')
+const taskRouter = require("./routes/task.js")
 const goalsRoutes = require("./routes/goals")
-
 
 const diaryRoutes = require("./routes/diary")
 
 //use routes
-app.use("/auth",authRouter)
+app.use("/auth", authRouter)
 app.use("/user", isSignedIn, userRouter)
 app.use("/books", isSignedIn, bookRouter)
-app.use('/tasks', isSignedIn ,taskRouter)
+app.use("/tasks", isSignedIn, taskRouter)
 app.use("/goals", isSignedIn, goalsRoutes)
 app.use("/diary", isSignedIn, diaryRoutes)
-
 
 //port
 const port = process.env.PORT ? process.env.PORT : 3000
