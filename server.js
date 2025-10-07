@@ -36,12 +36,15 @@ app.get("/", (req, res) => {
 })
 //require routes
 const authRouter = require("./routes/auth.js")
+const userRouter = require("./routes/user.js")
 const bookRouter = require("./routes/books")
 const taskRouter = require('./routes/task.js')
 const goalsRoutes = require("./routes/goals")
 const diaryRoutes = require("./routes/diary")
+
 //use routes
 app.use("/auth",authRouter)
+app.use("/user", isSignedIn, userRouter)
 app.use("/books", isSignedIn, bookRouter)
 app.use('/tasks', isSignedIn ,taskRouter)
 app.use("/goals", isSignedIn, goalsRoutes)

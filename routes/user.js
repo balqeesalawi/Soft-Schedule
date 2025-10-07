@@ -2,5 +2,7 @@ const router = require('express').Router()
 
 const userCtrl = require('../controllers/user.js')
 
-router.get('/:id', userCtrl.user_id_get)
+router.get('/:userId', userCtrl.user_show_get)
+router.get('/:userId/editPassword', userCtrl.user_edit_get)
+
 module.exports = router
