@@ -7,10 +7,7 @@ exports.diary_index_get = async (req, res) => {
 }
 
 exports.diary_create_get = async (req, res) => {
-  if (!req.session.user) return res.send("You must be logged in")
-  const diaries = await Diary.find({ owner: req.session.user._id }).populate(
-    "owner"
-  )
+  const diaries = await Diary.find({ owner: req.session.user._id }).populate( "owner" )
   res.render("diary/new.ejs", { diaries })
 }
 
@@ -47,9 +44,11 @@ exports.diary_delete = async (req, res) => {
 }
 
 exports.diary_filter_post = async (req, res) => {
-  let diaries = await Diary.find({ date: req.body.date })
+  let diaries = await Diary.find({
+    owner: req.session.user._id,
+    date: req.body.date })
   if (!req.body.date) {
-    diaries = await Diary.find({ id: req.body.diaryId })
+    diaries = await Diary.find({ ownser : req.session.user._id })
   }
   res.render("diary/index.ejs", { diaries })
 }
