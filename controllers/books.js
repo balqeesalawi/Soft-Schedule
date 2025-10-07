@@ -5,19 +5,17 @@ const Book = require("../models/book")
 //API'S
 
 exports.Book_index_get = async (req, res) => {
-  const reader = await Book.find({ owner: req.session.user._id })
+  const reader = await Book.find({owner: req.session.user._id}).populate("owner")
   res.render("books/index.ejs", { reader })
 }
 
 exports.Book_create_get = async (req, res) => {
-  const reader = await Book.find({ owner: req.session.user._id }).populate(
-    "owner"
-  )
-  res.render("books/new.ejs", { reader })
+  res.render("books/new.ejs")
 }
 
 exports.Book_create_post = async (req, res) => {
-  req.body.owner = req.session.user._Id
+  console.log("req.session.user._id", req.session.user._id)
+  req.body.owner = req.session.user._id
   if (req.body.isDoneReading === "on") {
     req.body.isDoneReading = true
   } else {
@@ -28,7 +26,7 @@ exports.Book_create_post = async (req, res) => {
 }
 
 exports.Book_show_get = async (req, res) => {
-  const reader = await Book.findById(req.params.booksId)
+  const reader = await Book.findById(req.params.booksId).populate("owner")
   res.render("books/show.ejs", { reader })
 }
 
