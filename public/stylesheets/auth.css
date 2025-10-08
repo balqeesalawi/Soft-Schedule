@@ -3,7 +3,7 @@ body {
   padding: 10px;
   font-family: "Poppins", sans-serif;
   background-color: #EAEAEA;
-  color: #7572A7;
+  color: whitesmoke;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -23,7 +23,7 @@ h1 {
 
 .signin-container,
 .signup-container {
-  background-color: #2f3b72;
+  background-color: #7572A7;
   box-shadow: 3px 3px 4px 4px #38434f;
   display: flex;
   flex-direction: column;

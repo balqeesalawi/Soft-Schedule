@@ -5,13 +5,13 @@
 
 <body>
   <h1><%=reader.title %></h1>
-
+ <div class="reading">
   <% if(reader.isDoneReading && reader.numOfPages >= reader.pagesPerDay) {%>
-  <p>Great! you have finished Reading, keep up the good work!</p>
+  <p class="isDoneReading">Great! you have finished Reading, keep up the good work!</p>
   <%} else {%>
-  <p>You can do it! just few more pages!</p>
+  <p class="isDoneReading">You can do it! just few more pages!</p>
   <%}%>
-
+</div>
   <h3>Book's Detail</h3>
   <div class="container">
     <div class="detail">

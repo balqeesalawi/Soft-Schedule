@@ -7,19 +7,22 @@
 <body>
 <h1>All books</h1>
 <div class="index-container">
-<div class="index-div">
-  <ul class="book-ul">
-  <% reader.forEach((list, index)=>{ %>
 
+  <ul class="book-ul">
+
+  <% reader.forEach((list, index)=>{ %>
+<div class="index-div">
 <a href="/books/<%=list._id%>">
   <li id="book-link">
     <%=list.title%>
   </li>
 </a>
+</div>
   <% }) %>
 </ul>
 </div>
-
+<div class="newBookContainer">
 <a class="new-book" href="/books/new">Add a New Book</a>
+</div>
 </div>
 </body>

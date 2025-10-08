@@ -22,9 +22,26 @@ p {
   font-size: 18px;
   text-align: center;
 }
+.reading {
+  color: whitesmoke;
+display: flex;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.isDoneReading {
+  background-color:#7572A7;
+  border-radius: 12px;
+  height: 20px;
+  width: 600px;
+  transition: all 0.3s ease;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+}
 
 a {
   text-decoration: none;
+  color: whitesmoke;
 }
 
 .new-container {
@@ -32,10 +49,11 @@ a {
   align-items: center;
   height: 75vh;
   flex-direction: column;
+
 }
 
 .new-body {
-  background-color: #6A89AA;
+  background-color: #7572A7;
   color: aliceblue;
   border-radius: 16px;
    width: 20vw;
@@ -44,10 +62,18 @@ a {
   align-items: center;
   margin: 20px 20px;
   padding: 15px 15px;
+  box-shadow: 3px 3px 4px 4px #465361;
+}
+
+.edit-container {
+  display: flex;
+  align-items: center;
+  height: 75vh;
+  flex-direction: column;
 }
 
 .edit-body {
-  background-color: #6A89AA;
+  background-color: #7572A7;
   color: aliceblue;
   border-radius: 16px;
    width: 20vw;
@@ -56,6 +82,7 @@ a {
   align-items: center;
   margin: 20px 20px;
   padding: 15px 15px;
+  box-shadow: 3px 3px 4px 4px #465361;
 }
 
 .index-container {
@@ -64,13 +91,20 @@ a {
 }
 
 .index-div {
-  background-color: #6A89AA;
+  background-color: #7572A7;
   color: aliceblue;
-  width: 20vw;
+  width: 50vw;
   border-radius: 25px;
   margin: 20px 20px;
   padding: 15px 15px;
   box-shadow: 3px 3px 4px 4px #465361;
+}
+
+.index-div:hover {
+  background-color: rgb(163, 151, 182);
+  transform: scale(1.02);
+  box-shadow: 0 6px 16px rgba(117, 114, 167, 0.25);
+
 }
 
 .book-ul {
@@ -78,10 +112,16 @@ a {
   list-style: none;
   text-decoration: none;
 }
-.book-link {
-  text-align: left;
+#book-link {
+  color: whitesmoke;
+  text-align: center;
   text-decoration: none;
+  font-size: 20px;
 }
+
+/* #book-link:hover {
+  background-color: rgb(223, 202, 255);
+} */
 
 input {
   padding: 10px;
@@ -93,7 +133,7 @@ input {
 
 .update {
   padding: 10px;
-  background-color: #6A89AA;
+  background-color: #7572A7;
   color: white;
   border-radius: 30px;
   border: none;
@@ -126,9 +166,17 @@ button:hover {
 }
 
 a:hover {
-background-color: rgb(130, 173, 157);
+background-color: rgb(47, 40, 103);
 }
+
+.newBookContainer{
+text-align: center;
+justify-content: center;
+}
+
 .new-book {
+  color: #7572A7;
+  text-align: center;
   padding: 10px;
   margin: 10px;
 }
@@ -148,7 +196,7 @@ background-color: rgb(130, 173, 157);
 }
 
 .detail {
-  background-color: #6A89AA;
+  background-color: #7572A7;
    color: aliceblue;
   border-radius: 15px;
   height: 350px;

@@ -2,8 +2,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
-  background-color: #ececec;
-  color: #fff;
+  background-color: #EAEAEA;
+  color: #7e7ca8;
   min-height: 100vh;
 }
 
@@ -14,7 +14,7 @@ body {
   text-align: center;
   margin-bottom: 40px;
   letter-spacing: 1px;
-  text-shadow: 6px 7px 15px #000000;
+  text-shadow: 6px 7px 15px #7f6789;
 }
 
 #home-page {
@@ -27,8 +27,8 @@ body {
 }
 
 .home-button {
-  background-color: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: #7572A7;
+  border: 1px solid #343145;
   border-radius: 12px;
   padding: 15px 30px;
   margin: 10px 0;
@@ -37,13 +37,13 @@ body {
 }
 
 .home-button:hover {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: #7572A7;
   transform: translateY(-4px);
 }
 
 .home-link {
   text-decoration: none;
-  color: #a37676;
+  color: whitesmoke;
   font-size: 1.1rem;
   font-weight: 500;
   letter-spacing: 0.5px;
