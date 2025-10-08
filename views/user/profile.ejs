@@ -14,9 +14,9 @@
         <button type="submit" class="upload-btn">Upload</button>
       </form>
 
-      <form action="/user/<%= user._id %>/profile" method="post" >
+<form action="/user/<%= user._id %>/username?_method=PUT" method="post">
         <label for="username" >Username</label>
-        <input type="text" name="usernabe" id="username" value="<%= user.username %>" />
+        <input type="text" name="username" id="username" value="<%= user.username %>" />
         <button type="submit" class="upload-btn">Edit</button>
       </form>
 
