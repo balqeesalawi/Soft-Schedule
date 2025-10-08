@@ -1,3 +1,37 @@
+<link rel="stylesheet" href="/stylesheets/diary.css" />
+<%- include("../partials/_navbar.ejs") %>
 
+<body class="new-page">
+  <div class="diary-form-container">
+    <!-- Title -->
+    <h1 class="diary-form-title">Diary Details</h1>
 
-<a href="/diary/<%= diary._id %>/edit">Edit</a>
+    <!-- Mood -->
+    <div class="form-group">
+      <label>Mood:</label>
+      <p class="show-value"><%= diary.mood %></p>
+    </div>
+
+    <!-- Date -->
+    <div class="form-group">
+      <label>Date:</label>
+      <p class="show-value"><%= diary.date %></p>
+    </div>
+
+    <!-- Diary Text -->
+    <div class="form-group">
+      <label>Diary Text:</label>
+      <p class="show-value show-text"><%= diary.text %></p>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="show-actions">
+      <a href="/diary" class="show-back-btn">Back</a>
+      <a href="/diary/<%= diary._id %>/edit" class="show-edit-btn">Edit</a>
+
+      <form action="/diary/<%= diary._id %>?_method=DELETE" method="POST">
+        <button type="submit" class="show-delete-btn">Delete</button>
+      </form>
+    </div>
+  </div>
+</body>

@@ -1,23 +1,30 @@
-<link rel="stylesheet" href="/stylesheets/" />
-<h1>New Diary Entry</h1>
+<link rel="stylesheet" href="/stylesheets/diary.css" />
+<%- include("../partials/_navbar.ejs") %>
 
-<form action="/diary" method="POST">
-  <label>Mood:</label>
-  <select name="mood" required>
-    <option value="Happy">Happy</option>
-    <option value="Sad">Sad</option>
-    <option value="Angry">Angry</option>
-    <option value="Relaxed">Relaxed</option>
-  </select>
-  <br />
+<body class="new-page">
+<div class="diary-form-container">
+  <h1 class="diary-form-title">Add a Diary Entry</h1>
 
-  <label>Date:</label>
-  <input type="date" name="date" id="date" />
-  <br />
+  <form action="/diary" method="POST" class="diary-form">
+    <!-- Mood -->
+    <label for="mood">Mood:</label>
+    <select name="mood" id="mood" >
+      <option value="Happy">Happy</option>
+      <option value="Sad">Sad</option>
+      <option value="Angry">Angry</option>
+      <option value="Relaxed">Relaxed</option>
+    </select>
 
-  <label>Diary Text:</label><br />
-  <textarea name="text" placeholder="What's Happening Today?"></textarea>
-  <br />
+    <!-- Date -->
+    <label for="date">Date:</label>
+    <input type="date" name="date" id="date"  />
 
-  <button type="submit">Save Entry</button>
-</form>
+    <!-- Diary Text -->
+    <label for="text">Diary Text:</label>
+    <textarea name="text" id="text" placeholder="What's happening today?" required></textarea>
+
+    <!-- Submit Button -->
+    <button type="submit" class="submit-btn">Save Entry</button>
+  </form>
+</div>
+</body>

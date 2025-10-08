@@ -1,0 +1,432 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bangers&family=Bungee&family=Calistoga&family=Concert+One&family=Lobster&family=Luckiest+Guy&family=Pacifico&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+US+Modern:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bangers&family=Boogaloo&family=Bungee&family=Calistoga&family=Concert+One&family=Lobster&family=Luckiest+Guy&family=Pacifico&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+US+Modern:wght@100..400&display=swap');
+/* index page */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Calistoga", serif;
+  background-color: #eaeaea;
+  color: #2c2c2c;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.diary-title {
+  color: #7572a7;
+  font-size: 60px;
+  font-weight: 400;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.filter {
+  width: 90%;
+  max-width: 600px;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.filter-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filter-form label {
+  font-size: 16px;
+  color: #384554;
+}
+
+.filter-form input[type="date"] {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #708090;
+  font-size: 16px;
+}
+
+.filter-btn {
+  background-color: #7572a7;
+  color: whitesmoke;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  background-color: #7572a7;
+  transform: scale(1.03);
+}
+
+/* ADD NEW DIARY */
+.add button {
+  background-color: #7572a7;
+  color: whitesmoke;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 25px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  margin-bottom: 25px;
+}
+
+.add button:hover {
+  background-color: #7572a7;
+  transform: scale(1.03);
+}
+
+.diary-list {
+  width: 90%;
+  max-width: 900px;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.list-item {
+  background-color: #ffffffd6;
+  border-radius: 12px;
+  padding: 12px;
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.list-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(112, 128, 144, 0.25);
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 5px;
+}
+
+.list-item .edit {
+  background-color: #7572a7;
+  color: whitesmoke;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 14px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 13px;
+  transition: all 0.3s ease;
+}
+
+.list-item .edit:hover {
+  background-color: #7572a7;
+  transform: scale(1.05);
+}
+
+.delete-btn {
+  background-color: #a14b4b;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 14px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 13px;
+  transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+  background-color: #883f3f;
+  transform: scale(1.05);
+}
+
+.details-btn {
+  display: inline-block;
+  background-color: #7572a7;
+  color: whitesmoke;
+  text-decoration: none;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-weight: 500;
+  font-size: 13px;
+  transition: all 0.3s ease;
+  margin-bottom: 5px;
+}
+
+.details-btn:hover {
+  background-color: #7572a7;
+  transform: scale(1.03);
+}
+/* NEW-PAGE */
+body.new-page {
+  margin: 0;
+  padding: 0;
+  font-family: "Calistoga", serif;
+  background-color: #eaeaea;
+  color: #2c2c2c;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+}
+
+/* Container */
+.diary-form-container {
+  background-color: #ffffffd6;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 600px;
+  padding: 40px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Title */
+.diary-form-title {
+  color: #7572a7;
+  font-size: 48px;
+  font-weight: 400;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Form */
+.diary-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 18px;
+}
+
+.diary-form label {
+  font-size: 18px;
+  color: #384554;
+  margin-bottom: 5px;
+}
+
+.diary-form select,
+.diary-form input[type="date"],
+.diary-form textarea {
+  border: 1px solid #708090;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 16px;
+  font-family: "Playfair Display";
+  resize: none;
+  width: 100%;
+  background-color: #fafafa;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.diary-form select:focus,
+.diary-form input[type="date"]:focus,
+.diary-form textarea:focus {
+  border-color: #7572a7;
+  box-shadow: 0 0 5px rgba(117, 114, 167, 0.4);
+  outline: none;
+}
+
+/* Textarea */
+.diary-form textarea {
+  height: 150px;
+}
+
+/* Submit Button */
+.submit-btn {
+  background-color: #7572a7;
+  color: whitesmoke;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #7572a7;
+  transform: scale(1.03);
+}
+
+/* show page */
+/* Body */
+body.show-page {
+  margin: 0;
+  padding: 0;
+  font-family: "Calistoga", serif;
+  background-color: #eaeaea;
+  color: #2c2c2c;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+}
+
+/* Container */
+.show-container {
+  background-color: #ffffffd6;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  /* max-width: 700px; */
+  padding: 40px 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Title */
+.show-title {
+  font-family: "Playfair Display";
+  font-size: 48px;
+  font-weight: 400;
+  color: #7572a7;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Top Info (Mood & Date) */
+/* Body */
+body.show-page {
+  margin: 0;
+  padding: 0;
+  font-family: "Calistoga", serif;
+  background-color: #eaeaea;
+  color: #2c2c2c;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 50px;
+}
+
+/* Container */
+.show-container {
+  background-color: #ffffffd6;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 600px;
+  padding: 40px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Title */
+.show-title {
+  font-size: 48px;
+  font-weight: 400;
+  color: #7572a7;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Form-like groups */
+.form-group {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 18px;
+  color: #384554;
+  margin-bottom: 8px;
+}
+
+.show-value {
+  display: block;
+  font-size: 18px;
+  color: #2c2c2c;
+  background-color: #fafafa;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #708090;
+  min-height: 40px;
+  white-space: pre-wrap; /* preserves line breaks */
+}
+
+/* Diary text */
+.show-text {
+  height: auto;
+  min-height: 120px;
+  line-height: 1.6;
+}
+
+/* Action buttons */
+.show-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.show-back-btn,
+.show-edit-btn,
+.show-delete-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 45px;
+  text-decoration: none;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 25px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+/* Button colors and hover effects */
+.show-back-btn {
+  background-color: #cccccc;
+  color: #2c2c2c;
+}
+.show-back-btn:hover {
+  background-color: #b0b0b0;
+}
+
+.show-edit-btn {
+  background-color: #7572a7;
+  color: whitesmoke;
+}
+.show-edit-btn:hover {
+  background-color: #7572a7;
+  transform: scale(1.05);
+}
+
+.show-delete-btn {
+  width: 150px;
+  height: 70px;
+  background-color: #e74c3c;
+  color: #ffffff;
+}
+.show-delete-btn:hover {
+  background-color: #c0392b;
+  transform: scale(1.05);
+}

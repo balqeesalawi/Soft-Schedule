@@ -1,27 +1,28 @@
-<link rel="stylesheet" href="/stylesheets/" />
+<link rel="stylesheet" href="/stylesheets/diary.css" />
 <%- include("../partials/_navbar.ejs") %>
 
-<h1>Edit Diary Entry</h1>
+<body class="new-page">
+  <div class="diary-form-container">
+    <h1 class="diary-form-title">Edit Diary Entry</h1>
 
-<form action="/diary/<%= diary._id %>?_method=PUT" method="POST">
-  <label>Mood:</label>
-  <select name="mood">
-    <option value="Happy" <%= diary.mood === "Happy" ? "selected" : "" %>>Happy</option>
-    <option value="Sad" <%= diary.mood === "Sad" ? "selected" : "" %>>Sad</option>
-    <option value="Angry" <%= diary.mood === "Angry" ? "selected" : "" %>>Angry</option>
-    <option value="Relaxed" <%= diary.mood === "Relaxed" ? "selected" : "" %>>Relaxed</option>
-  </select>
-  <br />
-  <label>Date</label>
-  <input type="date" name="date" id="date" value="<%= diary.date %>">
-<br>
-  <label>Diary Text:</label><br />
-  <textarea name="text"><%= diary.text %></textarea>
-  <br />
+    <form action="/diary/<%= diary._id %>?_method=PUT" method="POST" class="diary-form">
+    <!-- Mood -->
+      <label>Mood:</label>
+        <select name="mood">
+          <option value="Happy" <%= diary.mood === "Happy" ? "selected" : "" %>>Happy</option>
+          <option value="Sad" <%= diary.mood === "Sad" ? "selected" : "" %>>Sad</option>
+          <option value="Angry" <%= diary.mood === "Angry" ? "selected" : "" %>>Angry</option>
+          <option value="Relaxed" <%= diary.mood === "Relaxed" ? "selected" : "" %>>Relaxed</option>
+        </select>
 
-  <button type="submit">Update</button>
-</form>
+         <!-- Date -->
+        <label for="date">Date:</label>
+        <input type="date" name="date" id="date" value="<%= diary.date %>">
 
-<form action="/diary/<%= diary._id %>?_method=DELETE" method="POST">
-  <button type="submit">Delete</button>
-</form>
+        <!-- Diary Text -->
+        <label for="text">Diary Text:</label>
+        <textarea name="text"><%= diary.text %></textarea>
+        <button type="submit" class="submit-btn">Update</button>
+    </form>
+  </div>
+</body>
