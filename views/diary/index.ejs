@@ -1,6 +1,8 @@
 <link rel="stylesheet" href="/stylesheets/diary.css" />
 <%- include("../partials/_navbar.ejs") %>
 
+<body class="index-page">
+
 <!-- TITLE -->
 <h1 class="diary-title">MY DIARY</h1>
 
@@ -26,8 +28,10 @@
     <a href="/diary/<%= diary._id %>" class="details-btn">View Details</a>
 
     <div class="actions">
-    <form action="/diaries/<%= diary._id %>/edit" method="get">
+
+    <a href="/diary/<%= diary._id %>/edit">
       <button type="submit" class="edit">Edit</button>
+    </a>
         <!-- BUTTONS -->
       <form action="/diary/<%= diary._id %>?_method=DELETE" method="POST" class="delete-form">
         <button type="submit" class="delete-btn">Delete</button>
@@ -36,3 +40,4 @@
   </li>
   <% }) %>
 </ul>
+</body>

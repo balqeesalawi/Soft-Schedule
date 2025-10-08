@@ -1,34 +1,37 @@
 <link rel="stylesheet" href="/stylesheets/diary.css" />
 <%- include("../partials/_navbar.ejs") %>
 
-<div class="diary-container">
-  <!-- Page Title -->
-  <h1 class="diary-title">Diary Details</h1>
+<body class="new-page">
+  <div class="diary-form-container">
+    <!-- Title -->
+    <h1 class="diary-form-title">Diary Details</h1>
 
-  <!-- Diary Details Section -->
-  <section class="diary-details">
-    <div class="detail-box">
-      <h2 class="detail-label">Date</h2>
+    <!-- Mood -->
+    <div class="form-group">
+      <label>Mood:</label>
+      <p class="show-value"><%= diary.mood %></p>
     </div>
 
-    <div class="detail-box">
-      <h2 class="detail-label">Mood</h2>
-      <p class="detail-value"><%= diary.mood %></p>
+    <!-- Date -->
+    <div class="form-group">
+      <label>Date:</label>
+      <p class="show-value"><%= diary.date %></p>
     </div>
 
-    <div class="detail-box">
-      <h2 class="detail-label">Text</h2>
-      <p class="detail-value"><%= diary.text %></p>
+    <!-- Diary Text -->
+    <div class="form-group">
+      <label>Diary Text:</label>
+      <p class="show-value show-text"><%= diary.text %></p>
     </div>
-  </section>
 
-  <!-- Action Buttons -->
-  <section class="diary-actions">
-    <a href="/diary" class="back-btn">Back</a>
-    <a href="/diary/<%= diary._id %>/edit" class="edit-btn">Edit</a>
+    <!-- Action Buttons -->
+    <div class="show-actions">
+      <a href="/diary" class="show-back-btn">Back</a>
+      <a href="/diary/<%= diary._id %>/edit" class="show-edit-btn">Edit</a>
 
-    <form action="/diary/<%= diary._id %>?_method=DELETE" method="POST" class="delete-form">
-      <button type="submit" class="delete-btn">Delete</button>
-    </form>
-  </section>
-</div>
+      <form action="/diary/<%= diary._id %>?_method=DELETE" method="POST">
+        <button type="submit" class="show-delete-btn">Delete</button>
+      </form>
+    </div>
+  </div>
+</body>
