@@ -1,22 +1,25 @@
 <link rel="stylesheet" href="/stylesheets/nav.css" />
+
 <nav>
-<% if(user){%>
   <div id="nav-page">
-  
-  <div id="middle-nav">
-  <a href="/tasks">My To-Do-List</a>
-  <a href="/books">Books</a>
-  <a href="/goals">Goal</a>
-  <a href="/diary">Diaries</a>
-</div>
-  <a href="/user/<%= user._id %>/profile">Profile</a>
-  <a href="/auth/sign-out">Sign-Out</a>
-  <!-- <p>Welcome <%= user.username%> to the SoftSchedule App !</p> -->
-
-<%} else { %>
-  <a href="/auth/sign-up">Sign-Up</a>
-  <a href="/auth/sign-in">Sign-In</a>
-<%}%>
-</div>
-
+    <% if (user) { %>
+      <div id="middle-nav">
+        <a href="/">Home</a>
+        <a href="/tasks">My To-Do-List</a>
+        <a href="/books">Books</a>
+        <a href="/goals">Goal</a>
+        <a href="/diary">Diaries</a>
+      </div>
+      <div id="right-nav">
+        <a href="/user/<%= user._id %>/profile">Profile</a>
+        <a href="/auth/sign-out">Sign-Out</a>
+      </div>
+    <% } else { %>
+      <div id="guest-nav">
+        <a href="/auth/sign-up">Sign-Up</a>
+        <a href="/auth/sign-in">Sign-In</a>
+      </div>
+    <% } %>
+  </div>
 </nav>
+

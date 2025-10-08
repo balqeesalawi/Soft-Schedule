@@ -1,24 +1,25 @@
+
 body {
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
-  background-color: #ececec;
-  color: #fff;
+  background-color: whitesmoke;
+  color: #7572A7;
   min-height: 100vh;
-  /* display: flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; */
+  justify-content: center;
 }
 
 .home-h1 {
-  background-image: image("");
-  font-size: 3rem;
-  font-weight: 600;
+  font-size: 3.2rem;
+  font-weight: bold;
   text-align: center;
   margin-bottom: 40px;
+  color: #7572A7;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
   letter-spacing: 1px;
-  text-shadow: 6px 7px 15px #000000;
 }
 
 #home-page {
@@ -26,29 +27,41 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 30px;
   flex-wrap: wrap;
 }
 
 .home-button {
-  background-color: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: white;
   border-radius: 12px;
-  padding: 15px 30px;
-  margin: 10px 0;
+  padding: 20px 35px;
+  box-shadow: 0 4px 12px rgba(117, 114, 167, 0.15);
   transition: all 0.3s ease;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+  min-width: 160px;
+  text-align: center;
+  border: 2px solid transparent;
 }
 
 .home-button:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-  transform: translateY(-4px);
+  transform: translateY(-5px);
+  border-color: #7572A7;
+  box-shadow: 0 6px 18px rgba(117, 114, 167, 0.25);
+  background-color: #f4f4f4;
 }
 
 .home-link {
   text-decoration: none;
-  color: #fff;
-  font-size: 1.1rem;
-  font-weight: 500;
+  color: #7572A7;
+  font-size: 1.2rem;
+  font-weight: 600;
   letter-spacing: 0.5px;
+  transition: color 0.3s ease;
 }
+
+.home-link:hover {
+  color: #5e5aa6;
+}
+
+
+
+
