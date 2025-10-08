@@ -30,6 +30,15 @@
   * morgan
   * bcrypt
   * ejs
+
+  ### ***apps used***
+  * VS code
+  * figma
+  * trello
+  * googleFonts
+  * pintrest
+  * flow & design
+
 ***
 
 ### ***Getting Started***
@@ -43,9 +52,20 @@
 ![image](./screenshots/diagram.png)
 
 ### ***Future Updates***
+- [ ] Adding a pop Up reminder for daily tasks, books, and achieving goal
+- [ ] Adding a calender and connecting it to daily tasks
+- [ ] making the app more interactive with animation
+- [ ] Adding more functionality
+- [ ] Making the App more customizable
+- [ ] Adding sticker
+- [ ] expanding the App
 
 ***
 
 ### ***Credits***
+[github](https://github.com/SEB-X-Bahrain/class_wiki)
+[w3schools](https://www.w3schools.com/)
+[mdn](https://developer.mozilla.org/en-US/)
+
 #####
 ***
