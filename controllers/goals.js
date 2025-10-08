@@ -52,6 +52,6 @@ exports.goal_update_put = async (req, res) => {
 }
 
 exports.goals_delete = async (req, res) => {
-  const goal = await Diary.findByIdAndDelete(req.params.goalId)
-  res.redirect("/goal")
+  const goal = await Goal.findByIdAndDelete(req.params.goalId)
+  res.redirect("/goals")
 }
