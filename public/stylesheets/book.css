@@ -27,6 +27,13 @@ a {
   text-decoration: none;
 }
 
+.new-container {
+  display: flex;
+  align-items: center;
+  height: 75vh;
+  flex-direction: column;
+}
+
 .new-body {
   background-color: #6A89AA;
   color: aliceblue;
@@ -135,9 +142,8 @@ background-color: rgb(130, 173, 157);
 
 .container {
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: auto;
+  height: 75vh;
   flex-direction: column;
 }
 
@@ -148,7 +154,7 @@ background-color: rgb(130, 173, 157);
   height: 350px;
   width: 350px;
   text-align: center;
-  padding-top: 5px;
+  padding-top: 3px;
   box-shadow: 3px 3px 4px 4px rgb(61, 67, 78);
 }
 

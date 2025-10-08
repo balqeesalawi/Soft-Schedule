@@ -4,6 +4,7 @@
 <%- include("../partials/_navbar.ejs") %>
 <body>
 <h1>Add Your book</h1>
+<div class="new-container">
 <div class="new-body">
 <form action="/books" method="post">
   <label for="title">Book Title</label>
@@ -21,7 +22,7 @@
   <div class="checkbox-div">
   <label for="isDoneReading">Done Reading</label>
   <input type="checkbox" name="isDoneReading" id="isDoneReading">
-
+</div>
   <br>
 
   <button type="submit">Add book</button>
