@@ -1,53 +1,58 @@
-<link rel="stylesheet" href="/stylesheets/" />
+<link rel="stylesheet" href="/stylesheets/goal.css" />
 <%- include("../partials/_navbar.ejs") %>
 
-<h1>Your Goals</h1>
-
-<form action="/goals/filter" method="get">
-  <label>Filter by Duration:</label>
-  <select name="duration">
-    <option value="all" <%= selectedDuration === "all" ? "selected" : "" %>>All</option>
-    <option value="week" <%= selectedDuration === "week" ? "selected" : "" %>>Week</option>
-    <option value="month" <%= selectedDuration === "month" ? "selected" : "" %>>Month</option>
-    <option value="year" <%= selectedDuration === "year" ? "selected" : "" %>>Year</option>
-  </select>
-  <button type="submit">Filter</button>
-</form>
+<h1 class="page-title">YOUR GOALS</h1>
+<body>
 
 
-<h2>Add New Goal</h2>
-<form action="/goals" method="POST">
-  <select name="duration" required>
-    <option value="week">Week</option>
-    <option value="month">Month</option>
-    <option value="year">Year</option>
-  </select>
-  <input type="text" name="goal" placeholder="Write your goal..." required />
-  <button type="submit">Add Goal</button>
-</form>
+<div class="goal-container">
+<!-- Filter Section -->
+<section class="filter">
+  <form action="/goals/filter" method="get" class="filter-form">
+    <select name="duration" class="filter-select">
+      <option value="all" <%= selectedDuration === "all" ? "selected" : "" %>>All</option>
+      <option value="week" <%= selectedDuration === "week" ? "selected" : "" %>>Week</option>
+      <option value="month" <%= selectedDuration === "month" ? "selected" : "" %>>Month</option>
+      <option value="year" <%= selectedDuration === "year" ? "selected" : "" %>>Year</option>
+    </select>
+    <button type="submit" class="filter-btn">Filter</button>
+  </form>
+</section>
 
+<!-- Add New Goal -->
+<section class="add-goal">
+  <h2 class="add">Add New Goal</h2>
+  <form action="/goals" method="POST" class="add-form">
+    <select name="duration" class="goal-select">
+      <option value="week">Week</option>
+      <option value="month">Month</option>
+      <option value="year">Year</option>
+    </select>
+    <input type="text" name="goal" placeholder="Write your goal..." class="goal-input"/>
+    <button type="submit" class="add-btn">Add Goal</button>
+  </form>
+</section>
 
-<ul>
+<!-- Goals List -->
+<ul class="goal-list">
   <% goals.forEach(goal => { %>
-    <li>
-      <%= goal.goal %> - <%= goal.duration %>
-
-      <form action="/goals/<%= goal._id %>?_method=PUT" method="POST">
-        <input type="checkbox" name="isCompleted" <%= goal.isCompleted ? "checked" : "" %>>
-
-        <input type="text" name="goal" value="<%= goal.goal %>" required />
-
-        <select name="duration">
+    <li class="goal-item">
+      <form action="/goals/<%= goal._id %>?_method=PUT" method="POST" class="goal-form">
+        <input type="checkbox" name="isCompleted" <%= goal.isCompleted ? "checked" : "" %> class="goal-checkbox">
+        <input type="text" name="goal" value="<%= goal.goal %>" class="add-input" />
+        <select name="duration" class="add-select">
           <option value="week" <%= goal.duration === "week" ? "selected" : "" %>>Week</option>
           <option value="month" <%= goal.duration === "month" ? "selected" : "" %>>Month</option>
           <option value="year" <%= goal.duration === "year" ? "selected" : "" %>>Year</option>
         </select>
-        <button type="submit">Update</button>
+        <button type="submit" class="update-btn">Update</button>
       </form>
 
-      <form action="/goals/<%= goal._id %>?_method=DELETE" method="POST">
-        <button type="submit">Delete</button>
+      <form action="/goals/<%= goal._id %>?_method=DELETE" method="POST" class="delete-form">
+        <button type="submit" class="delete-btn">Delete</button>
       </form>
     </li>
   <% }) %>
 </ul>
+</div>
+</body>

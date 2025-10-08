@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bangers&family=Bungee&family=Calistoga&family=Concert+One&family=Lobster&family=Luckiest+Guy&family=Pacifico&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+US+Modern:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bangers&family=Boogaloo&family=Bungee&family=Calistoga&family=Concert+One&family=Lobster&family=Luckiest+Guy&family=Pacifico&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+US+Modern:wght@100..400&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Calistoga";
+  background: #EAEAEA;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: left;
+  padding: 40px 0;
+}
+
+.page-title {
+  color:#7572a7;
+  font-size: 70px;
+  font-family: "Calistoga";
+  font-weight: 400;
+  font-style: normal;
+}
+
+.filter {
+  width: 90%;
+  max-width: 600px;
+  padding: 18px 22px;
+  display: flex;
+  justify-content: center;
+}
+
+.filter-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filter-select {
+  font-family: "Playfair Display";
+  padding: 10px 14px;
+  border: 1px solid #7572a7;
+  border-radius: 8px;
+  background-color: #fffdf8;
+  color: #384554;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.filter-select:focus {
+  border-color: #ffffff;
+  outline: none;
+}
+
+.filter-btn {
+  background-color: #7572a7;
+  color: #faf3e0;
+  border: none;
+  border-radius: 8px;
+  padding: 13px 25px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  background-color: #5f57a0;
+  transform: scale(1.03);
+}
+
+.add-goal {
+  width: 90%;
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #ffffffd6;
+  border: 1px solid #7572a7;
+  border-radius: 14px;
+  padding: 20px 25px;
+  box-shadow: 0 4px 12px rgba(117, 114, 167, 0.15);
+}
+
+.add {
+  font-family: "Playfair Display";
+  font-size: 30px;
+  font-weight: 600;
+  color: #384554;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.add-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.goal-input,
+.goal-select {
+  font-family: "Playfair Display";
+  padding: 10px 14px;
+  border: 1px solid #7572a7;
+  border-radius: 8px;
+  background-color: whitesmoke;
+  font-size: 20px;
+  color: #384554;
+  flex: auto;
+  transition: 0.3s;
+}
+
+.goal-input:focus,
+.goal-select:focus {
+  border-color: #5f57a0;
+  outline: none;
+}
+
+.add-btn {
+  font-family: "Playfair Display";
+  background-color: #7572a7;
+  color: whitesmoke;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 25px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.add-btn:hover {
+  background-color: #5f57a0;
+  transform: scale(1.03);
+}
+
+.goal-list {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.goal-item {
+  background-color: #ffffffd6;
+  border: 1px solid #7572a7;
+  border-radius: 14px;
+  padding: 15px 20px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-between;
+  box-shadow: 0 4px 12px rgba(117, 114, 167, 0.15);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.goal-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 16px rgba(117, 114, 167, 0.25);
+}
+
+.goal-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+
+.add-input {
+  font-family: "Playfair Display";
+  padding: 8px 12px;
+  border: 1px solid #7572a7;
+  border-radius: 8px;
+  font-size: 16px;
+  flex: 1;
+  transition: border-color 0.3s;
+}
+
+.add-input:focus {
+  border-color: #5f57a0;
+  outline: none;
+}
+
+.add-select {
+  font-family: "Playfair Display";
+  padding: 8px 12px;
+  border: 1px solid #7572a7;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: whitesmoke;
+  transition: border-color 0.3s;
+}
+
+.add-select:focus {
+  border-color: #5f57a0;
+  outline: none;
+}
+
+.update-btn {
+  font-family: "Playfair Display";
+  background-color: #7572a7;
+  color: whitesmoke;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.update-btn:hover {
+  background-color: #5f57a0;
+  transform: scale(1.03);
+}
+
+.delete-btn {
+  font-family: "Playfair Display";
+  display: flex;
+  align-items: center;
+  background-color: #a14b4b;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+  background-color: #883f3f;
+  transform: scale(1.03);
+}
+
+.checkbox {
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  accent-color: #708090;
+}
+
+.goal-form input[type="checkbox"]:checked + .add-input {
+  text-decoration: line-through;
+  color: #888;
+}
+

@@ -1,16 +1,18 @@
 <link rel="stylesheet" href="/stylesheets/" />
-<h1><%= user.username %> Profile </h1>
+<h1><%= user.username %> Profile</h1>
 
-
-<form action="/user/<%= user._id %>/profile" method="post" enctype="multipart/form-data">
-  <input type="file" name="picture">
+<form
+  action="/user/<%= user._id %>/profile"
+  method="post"
+  enctype="multipart/form-data"
+>
+  <input type="file" name="picture" />
   <button type="submit">upload</button>
 </form>
 
 <form action="/user/<%= user._id %>/profile?_method=PUT" method="post">
   <img src="<%=user.picture%>" alt="image" width="150">
 </form>
-
 
 <p>Username: <%= user.username %></p>
 
