@@ -1,16 +1,28 @@
-<link rel="stylesheet" href="/stylesheets/" />
+<head>
+  <link rel="stylesheet" href="/stylesheets/book.css" />
+</head>
 <%- include("../partials/_navbar.ejs") %>
 
+
+<body>
 <h1>All books</h1>
+<div class="index-container">
 
-<ul>
+  <ul class="book-ul">
+
   <% reader.forEach((list, index)=>{ %>
-
+<div class="index-div">
 <a href="/books/<%=list._id%>">
-  <li>
+  <li id="book-link">
     <%=list.title%>
   </li>
 </a>
+</div>
   <% }) %>
 </ul>
-<a href="/books/new">Add a New Book</a>
+</div>
+<div class="newBookContainer">
+<a class="new-book" href="/books/new">Add a New Book</a>
+</div>
+</div>
+</body>
