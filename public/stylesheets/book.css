@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
-  background-color: #FFF8E6;
+  background-color: #fff8e6;
   color: #7c3232;
   min-height: 100vh;
 }
@@ -19,19 +19,22 @@ h3 {
   text-shadow: 0px 6px 14px #654e4e;
 }
 p {
-font-size: 20px;
-text-align: center;
+  font-size: 18px;
+  text-align: center;
 }
 
+a {
+  text-decoration: none;
+}
 
 .new-body {
- display: flex;
- justify-content: center;
- align-items: center;
- justify-content: space-around;
- align-items: center;
- margin: 20px 20px;
- padding: 15px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px 20px;
+  padding: 15px 15px;
 }
 
 .edit-body {
@@ -44,17 +47,27 @@ text-align: center;
   padding: 15px 15px;
 }
 
-
+.index-container {
+  display: flex;
+  justify-content: center;
+}
 
 .index-div {
   background-color: #edba8e;
   width: 20vw;
   border-radius: 25px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin: 20px 20px;
   padding: 15px 15px;
+}
+
+.book-ul {
+  text-align: left;
+  list-style: none;
+  text-decoration: none;
+}
+.book-link {
+  text-align: left;
+  text-decoration: none;
 }
 
 input {
@@ -66,7 +79,7 @@ input {
 }
 
 .update {
-   padding: 10px;
+  padding: 10px;
   background-color: rgb(43, 72, 78);
   color: white;
   border-radius: 30px;
@@ -86,7 +99,7 @@ button {
 }
 
 .removebtn {
- padding: 10px;
+  padding: 10px;
   background-color: rgb(43, 72, 78);
   color: white;
   border-radius: 30px;
@@ -95,19 +108,19 @@ button {
   font-size: 1.1em;
 }
 
-button:hover{
-   background-color: rgb(78, 138, 150);
+button:hover {
+  background-color: rgb(78, 138, 150);
 }
 
 a:hover {
-  background-color: rgb(130, 173, 157);
-  padding: 10px;
+background-color: rgb(130, 173, 157);
 }
-
-
 .new-book {
-padding: 10px;
-margin: 10px;
+  padding: 10px;
+  margin: 10px;
+}
+.new-book :hover {
+  background-color: rgb(78, 138, 150);
 }
 
 .checkbox-div {
@@ -115,18 +128,19 @@ margin: 10px;
 }
 
 .container {
-display: flex;
-justify-content: center;
-align-items: center;
-height: 52vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 52vh;
 }
 
 .detail {
   background-color: #edba8e;
   border-radius: 15px;
-  height: 300px;
-  width:300px;
+  height: 350px;
+  width: 350px;
   text-align: center;
+  padding-top: 5px;
   box-shadow: 3px 3px 4px 4px rosybrown;
 }
 
