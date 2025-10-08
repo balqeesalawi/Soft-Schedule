@@ -1,0 +1,63 @@
+body {
+  margin-top: 10px;
+  padding: 10px;
+  font-family: "Poppins", sans-serif;
+  background-color: #EAEAEA;
+  color: whitesmoke;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 3rem;
+  text-align: center;
+  text-shadow: 0px 6px 14px #514e65;
+}
+
+.sign-in-h1 {
+  font-size: 20px;
+}
+
+.signin-container,
+.signup-container {
+  background-color: #7572A7;
+  box-shadow: 3px 3px 4px 4px #38434f;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 25em;
+  height: 50%;
+  border-radius: 28px;
+  margin-top: 30px;
+  padding-top: 30px;
+  padding: 15px;
+}
+
+
+input {
+  padding: 10 px;
+  margin-bottom: 15px;
+  width: 100%;
+  border-radius: 15px;
+  height: 40px;
+}
+
+button {
+  padding: 10px;
+  background-color: rgb(43, 72, 78);
+  color: white;
+  border-radius: 23px;
+  border: none;
+  margin: 10px 0;
+  font-size: 1.1em;
+
+}
+
+button:hover{
+   background-color: rgb(78, 138, 150);
+}
+

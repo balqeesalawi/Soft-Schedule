@@ -1,6 +1,10 @@
-<link rel="stylesheet" href="/stylesheets/" />
+<head>
+  <link rel="stylesheet" href="/stylesheets/auth.css"/>
+</head>
+
 <%- include("../partials/_navbar.ejs") %>
 
+<div class="signin-container">
 <h2>Sign In</h2>
 <form action="/auth/sign-in" method="POST">
   <label for="usename">username </label>
@@ -13,4 +17,4 @@
 
   <button type="submit">Sign In</button>
 </form>
-
+</div>

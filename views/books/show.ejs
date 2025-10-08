@@ -1,21 +1,29 @@
-<link rel="stylesheet" href="/stylesheets/" />
+<head>
+  <link rel="stylesheet" href="/stylesheets/book.css" />
+</head>
 <%- include("../partials/_navbar.ejs") %>
 
-<h1><%=reader.title %></h1>
+<body>
+  <h1><%=reader.title %></h1>
+ <div class="reading">
+  <% if(reader.isDoneReading && reader.numOfPages >= reader.pagesPerDay) {%>
+  <p class="isDoneReading">Great! you have finished Reading, keep up the good work!</p>
+  <%} else {%>
+  <p class="isDoneReading">You can do it! just few more pages!</p>
+  <%}%>
+</div>
+  <h3>Book's Detail</h3>
+  <div class="container">
+    <div class="detail">
+      <p>Book's title <%= reader.title%></p>
+      <p>Number of pages in the book <%=reader.numOfPages%></p>
+      <p>number of pages per day <%=reader.pagesPerDay%></p>
 
-<% if(reader.isDoneReading && reader.numOfPages >= reader.pagesPerDay) {%>
-<p>Great! you have finished Reading, keep up the good work!</p>
-<%} else {%>
-<p>You can do it! just few more pages!</p>
-<%}%>
+      <a id="update" href="/books/<%= reader._id%>/edit">Update</a>
 
-<h3>Book's Detail</h3>
-<p>Book's title <%= reader.title%></p>
-<p> Number of pages in the book <%=reader.numOfPages%></p>
-<p>number of pages per day <%=reader.pagesPerDay%></p>
-
-<a href="/books/<%= reader._id%>/edit">Update</a>
-
-<form action="/books/<%= reader._id %>?_method=DELETE" method="post">
-  <button type="submit">remove</button>
-</form>
+      <form action="/books/<%= reader._id %>?_method=DELETE" method="post">
+        <button class="removebtn" type="submit">remove</button>
+      </form>
+    </div>
+  </div>
+</body>

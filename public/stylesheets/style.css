@@ -6,10 +6,6 @@ body {
   background-color: whitesmoke;
   color: #7572A7;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 #home-page-container {
