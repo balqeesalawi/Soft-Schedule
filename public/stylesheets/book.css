@@ -2,21 +2,21 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
-  background-color: #fff8e6;
-  color: #7c3232;
+  background-color: #EAEAEA;
+  color: #7572A7;
   min-height: 100vh;
 }
 
 h1 {
   font-size: 3rem;
   text-align: center;
-  text-shadow: 0px 6px 14px #654e4e;
+  text-shadow: 0px 6px 14px #514e65;
 }
 
 h3 {
   font-size: 25px;
   text-align: center;
-  text-shadow: 0px 6px 14px #654e4e;
+  text-shadow: 0px 6px 14px #514e65;
 }
 p {
   font-size: 18px;
@@ -28,9 +28,11 @@ a {
 }
 
 .new-body {
+  background-color: #6A89AA;
+  color: aliceblue;
+  border-radius: 16px;
+   width: 20vw;
   display: flex;
-  justify-content: center;
-  align-items: center;
   justify-content: space-around;
   align-items: center;
   margin: 20px 20px;
@@ -38,10 +40,12 @@ a {
 }
 
 .edit-body {
+  background-color: #6A89AA;
+  color: aliceblue;
+  border-radius: 16px;
+   width: 20vw;
   display: flex;
   justify-content: center;
-  align-items: center;
-  justify-content: space-around;
   align-items: center;
   margin: 20px 20px;
   padding: 15px 15px;
@@ -53,11 +57,13 @@ a {
 }
 
 .index-div {
-  background-color: #edba8e;
+  background-color: #6A89AA;
+  color: aliceblue;
   width: 20vw;
   border-radius: 25px;
   margin: 20px 20px;
   padding: 15px 15px;
+  box-shadow: 3px 3px 4px 4px #465361;
 }
 
 .book-ul {
@@ -80,7 +86,7 @@ input {
 
 .update {
   padding: 10px;
-  background-color: rgb(43, 72, 78);
+  background-color: #6A89AA;
   color: white;
   border-radius: 30px;
   border: none;
@@ -131,17 +137,19 @@ background-color: rgb(130, 173, 157);
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 52vh;
+  height: auto;
+  flex-direction: column;
 }
 
 .detail {
-  background-color: #edba8e;
+  background-color: #6A89AA;
+   color: aliceblue;
   border-radius: 15px;
   height: 350px;
   width: 350px;
   text-align: center;
   padding-top: 5px;
-  box-shadow: 3px 3px 4px 4px rosybrown;
+  box-shadow: 3px 3px 4px 4px rgb(61, 67, 78);
 }
 
 
