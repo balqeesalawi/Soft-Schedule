@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
-  background-color: #fff8e6;
+  background-color: #FFF8E6;
   color: #7c3232;
   min-height: 100vh;
 }
@@ -13,11 +13,89 @@ h1 {
   text-shadow: 0px 6px 14px #654e4e;
 }
 
+h3 {
+  font-size: 25px;
+  text-align: center;
+  text-shadow: 0px 6px 14px #654e4e;
+}
+p {
+font-size: 20px;
+text-align: center;
+}
+
+
 .new-body {
    display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom:4px;
-  padding-bottom:4px;
   justify-content: space-around;
+ align-items: center;
+ margin: 20px 20px;
+ padding: 15px 15px;
+}
+form {
+  display: flex;
+   flex-direction: column;
+  justify-content: space-evenly;
+   width: 20em;
+   height: 50%;
+  background-color: #edba8e;
+  padding: 30px 40px 20px 40px;
+  border-radius: 30px;
+  color: #7c3232;
+  font-weight: bold;
+}
+
+input {
+  padding: 10 px;
+  margin-bottom: 15px;
+  width: 100%;
+  border-radius: 8px;
+  height: 35px;
+}
+
+.update {
+   padding: 10px;
+  background-color: rgb(43, 72, 78);
+  color: white;
+  border-radius: 30px;
+  border: none;
+  margin: 15px 0;
+  font-size: 1.1em;
+}
+
+button {
+  padding: 10px;
+  background-color: rgb(43, 72, 78);
+  color: white;
+  border-radius: 30px;
+  border: none;
+  margin: 15px 0;
+  font-size: 1.1em;
+}
+
+button:hover{
+   background-color: rgb(78, 138, 150);
+}
+
+a:hover {
+  background-color: rgb(56, 122, 97);
+}
+.checkbox-div {
+  flex-direction: row;
+}
+
+.container {
+display: flex;
+justify-content: center;
+align-items: center;
+height: 52vh;
+}
+.detail {
+  background-color: #edba8e;
+  border-radius: 15px;
+  height: 300px;
+  width:300px;
+  text-align: center;
+  box-shadow: 3px 3px 4px 4px rosybrown;
 }
