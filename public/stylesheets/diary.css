@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Calistoga&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Calistoga", serif;
+  background-color: #EAEAEA;
+  color: #2c2c2c;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 0;
+}
+
+/* PAGE TITLE */
+.diary-title {
+  color: #7572a7;
+  font-size: 60px;
+  font-weight: 400;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* FILTER FORM */
+.filter {
+  width: 90%;
+  max-width: 600px;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.filter-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filter-form label {
+  font-size: 16px;
+  color: #384554;
+}
+
+.filter-form input[type="date"] {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #708090;
+  font-size: 16px;
+}
+
+.filter-btn {
+  background-color: #7572a7;
+  color: #faf3e0;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  background-color: #5f6f82;
+  transform: scale(1.03);
+}
+
+/* ADD NEW DIARY */
+.add button {
+  background-color: #7572a7;
+  color: #faf3e0;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 25px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  margin-bottom: 25px;
+}
+
+.add button:hover {
+  background-color: #5f6f82;
+  transform: scale(1.03);
+}
+
+/* DIARY LIST: make items side by side */
+.diary-list {
+  width: 90%;
+  max-width: 900px;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* DIARY ITEM */
+.list-item {
+  background-color: #ffffffd6;
+  border-radius: 12px;
+  padding: 12px;
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.list-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(112, 128, 144, 0.25);
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 5px;
+}
+
+/* .list-item .edit,
+.list-item .delete-btn {
+  padding: 6px 14px;
+  font-size: 13px;
+} */
+
+.list-item .edit {
+  background-color: #7572a7;
+  color: #faf3e0;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 14px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 13px;
+  transition: all 0.3s ease;
+}
+
+.list-item .edit:hover {
+  background-color: #5f6f82;
+  transform: scale(1.05);
+}
+
+.delete-btn {
+  background-color: #a14b4b;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 14px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 13px;
+  transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+  background-color: #883f3f;
+  transform: scale(1.05);
+}
+
+.details-btn {
+  display: inline-block;
+  background-color: #7572a7;
+  color: #faf3e0;
+  text-decoration: none;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-weight: 500;
+  font-size: 13px;
+  transition: all 0.3s ease;
+  margin-bottom: 5px;
+}
+
+.details-btn:hover {
+  background-color: #5f6f82;
+  transform: scale(1.03);
+}

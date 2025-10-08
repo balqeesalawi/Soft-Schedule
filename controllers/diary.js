@@ -23,6 +23,11 @@ exports.diary_create_post = async (req, res) => {
   res.redirect("/diary")
 }
 
+exports.diary_show_get = async (req, res) => {
+  const diary = await Diary.findById(req.params.diaryId);
+  res.render("diary/show.ejs", { diary });
+};
+
 exports.diary_edit_get = async (req, res) => {
   const currentDiary = await Diary.findById(req.params.diaryId)
   res.render("diary/edit.ejs", { diary: currentDiary })
