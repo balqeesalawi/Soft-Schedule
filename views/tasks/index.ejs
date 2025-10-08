@@ -1,37 +1,46 @@
-<link rel="stylesheet" href="/stylesheets/" />
+<link rel="stylesheet" href="/stylesheets/tasks.css" />
 
 <%- include("../partials/_navbar.ejs") %>
 
-<form action="/tasks/filter" method="post">
-  <label for="date">Filter by Duration</label>
-  <input type="date" name="date" id="date" />
-  <button type="submit">Filter</button>
+
+
+
+  <div class="filter-form">
+    <h2>MY TASKS</h2>
+<form action="/tasks/filter" method="post" id="filter">
+  <label for="date"></label>
+  <input type="date" name="date" id="date-filter" />
+  <button type="submit" id="filter-btn"><img src="../photos/search.png" alt="search" width="20" height="20" /></button>
 </form>
+</div>
+<div id="tasks-page">
+  
+  <div id="new-task">
 
-<h2>Add New Task</h2>
 <form action="/tasks" method="post">
-  <label for="date">Date</label>
+   <label for="task">Add New Task</label>
+  <input type="text" name="task" id="task" placeholder="write task here.."/>
+
+  <label for="date"></label>
   <input type="date" name="date" id="date" />
 
-  <label for="time">Time</label>
+  <label for="time"></label>
   <input type="time" name="time" id="time" />
 
-  <label for="task">Task</label>
-  <input type="text" name="task" id="task" />
 
-  <label for="isDone">isDone?</label>
-  <input type="checkbox" name="isDone" id="isDone" />
-
-  <button type="submit">Add Task</button>
+  <button type="submit"><img src="../photos/add.png" alt="search" width="20" height="20" /></button>
 </form>
-<h1>All Tasks</h1>
+</div>
+
 <ul>
   <% tasks.forEach(task=> { %>
 
+    <div id="edit-form">
   <li>
-    <form action="/tasks/<%= task._id %>?_method=PUT" method="post">
-      <input type="checkbox" name="isDone" id="isDone" <% if(task.isDone) { %> />
-      /> checked > <% } %>
+    <form action="/tasks/<%= task._id %>?_method=PUT" method="post" id="add-form">
+      <input type="checkbox" name="isDone" id="isDone" <% if (task.isDone) { %>
+        checked
+        <% } %> /> 
       <label for="date"></label>
       <input type="date" name="date" id="date" value="<%= task.date %>" />
 
@@ -43,11 +52,15 @@
 
       <label for="isDone"></label>
 
-      <button type="submit">Edit Task</button>
+      <button type="submit"><img src="../photos/update.png" alt="search" width="20" height="20" /></button>
     </form>
+  
+
     <form action="/tasks/<%= task._id %>?_method=DELETE" method="post">
-      <button type="submit">Delete Task</button>
+      <button type="submit"><img src="../photos/delete.png" alt="search" width="25" height="25" /></button>
     </form>
+    </div>
   </li>
   <%})%>
 </ul>
+</div>

@@ -1,4 +1,6 @@
-<link rel="stylesheet" href="/stylesheets/" />
+<link rel="stylesheet" href="/stylesheets/profile.css" />
+<%- include("../partials/_navbar.ejs") %>
+
 <h1><%= user.username %> Profile </h1>
 
 
@@ -8,9 +10,7 @@
 </form>
 
 <form action="/user/<%= user._id %>/profile?_method=PUT" method="post">
-  <img src="<%=user.picture%>" alt="image">
-  <img src="/public/uploads/3e60081d9efc45c85aadd2eaf23137f9" alt="">
-  <p><%=user.picture%></p>
+  <img src="<%=user.picture%>" alt="image" width="150">
 </form>
 
 
