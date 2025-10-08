@@ -1,0 +1,138 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #eaeaea;
+  color: #7572A7;
+  min-height: 100vh;
+  text-align: center;
+}
+
+#tasks-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  background-color: whitesmoke;
+  border: 1px solid #7572A7;
+  border-radius: 6px;
+  padding: 5px;
+  margin: 10px 0;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+#task {
+  width: 20vw;
+}
+
+button {
+  border: none;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  cursor: pointer;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  width: 60vw;
+  margin: 8px;
+  padding: 10px;
+  background-color: white;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px,
+              rgba(0, 0, 0, 0.05) 0px 5px 10px;
+}
+
+li:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 16px rgba(117, 114, 167, 0.25);
+}
+
+#add-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+li form:nth-child(2) {
+  display: flex;
+  align-items: center;
+}
+
+#add-form input[type="text"],
+#add-form input[type="date"],
+#add-form input[type="time"] {
+  flex: 1 1 120px;
+  min-width: 100px;
+}
+
+#isDone {
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  accent-color: #42656C;
+}
+
+#new-task {
+  border-bottom: #0f1516;
+  margin-bottom: 20px;
+}
+
+#add-form input[type="checkbox"]:checked + #task {
+  text-decoration: line-through;
+  color: #888;
+}
+
+h2 {
+  margin-top: 10%;
+  color: #7572a7;
+  font-size: 70px;
+  font-family: "Calistoga";
+  font-weight: bold;
+  font-style: normal;
+}
+
+#filter,
+#new-task form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#filter button img,
+#new-task button img {
+  display: block;
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+#filter input[type="date"],
+#new-task input[type="text"],
+#new-task input[type="date"],
+#new-task input[type="time"] {
+  height: 36px;
+  line-height: 1.2;
+}
+
+
+.filter-form {
+  margin-bottom: 20px;
+}

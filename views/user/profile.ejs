@@ -1,19 +1,27 @@
-<link rel="stylesheet" href="/stylesheets/" />
-<h1><%= user.username %> Profile</h1>
+<link rel="stylesheet" href="/stylesheets/profile.css" />
+<%- include("../partials/_navbar.ejs") %>
 
-<form
-  action="/user/<%= user._id %>/profile"
-  method="post"
-  enctype="multipart/form-data"
->
-  <input type="file" name="picture" />
-  <button type="submit">upload</button>
-</form>
+<div id="profile-page">
+  <div class="profile-container">
+    <h1><%= user.username %>'s Profile</h1>
 
-<form action="/user/<%= user._id %>/profile?_method=PUT" method="post">
-  <img src="<%=user.picture%>" alt="image" width="150">
-</form>
+    <div class="profile-card">
+      <img src="<%= user.picture %>" alt="Profile Picture" class="profile-picture" />
 
-<p>Username: <%= user.username %></p>
+      <form action="/user/<%= user._id %>/profile" method="post" enctype="multipart/form-data" class="upload-form">
+        <label for="picture" class="upload-label">Change Picture</label>
+        <input type="file" name="picture" id="picture" />
+        <button type="submit" class="upload-btn">Upload</button>
+      </form>
 
-<a href="/user/<%= user._id %>/editPassword">Update Password</a>
+<form action="/user/<%= user._id %>/username?_method=PUT" method="post">
+        <label for="username" >Username</label>
+        <input type="text" name="username" id="username" value="<%= user.username %>" />
+        <button type="submit" class="upload-btn">Edit</button>
+      </form>
+
+
+      <a href="/user/<%= user._id %>/editPassword" class="password-link">Update Password</a>
+    </div>
+  </div>
+</div>
