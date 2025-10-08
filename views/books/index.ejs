@@ -7,16 +7,17 @@
 <body>
 <h1>All books</h1>
 <div class="index-div">
-  <ul>
+  <ul class="book-ul">
   <% reader.forEach((list, index)=>{ %>
 
 <a href="/books/<%=list._id%>">
-  <li>
+  <li id="book-link">
     <%=list.title%>
   </li>
 </a>
   <% }) %>
 </ul>
-<a href="/books/new">Add a New Book</a>
 </div>
+<a class="new-book" href="/books/new">Add a New Book</a>
+
 </body>

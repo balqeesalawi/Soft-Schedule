@@ -42,7 +42,19 @@ text-align: center;
   align-items: center;
   margin: 20px 20px;
   padding: 15px 15px;
+}
 
+
+
+.index-div {
+  background-color: #edba8e;
+  width: 20vw;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 20px;
+  padding: 15px 15px;
 }
 
 input {
@@ -91,6 +103,13 @@ a:hover {
   background-color: rgb(130, 173, 157);
   padding: 10px;
 }
+
+
+.new-book {
+padding: 10px;
+margin: 10px;
+}
+
 .checkbox-div {
   flex-direction: row;
 }
