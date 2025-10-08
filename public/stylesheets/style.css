@@ -12,6 +12,24 @@ body {
   justify-content: center;
 }
 
+#home-page-container {
+  text-align: center;
+
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+#title {
+  width: 50vw;
+  margin-top: 5%;
+}
+
+p {
+  font-size: 20px;
+  margin-top: -10px;
+}
+
 .home-h1 {
   font-size: 3.2rem;
   font-weight: bold;
@@ -24,11 +42,11 @@ body {
 
 #home-page {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  flex-wrap: wrap;
+  flex-direction: column;
+
+  width: 50vw;
+  margin-top: 4%;
+  
 }
 
 .home-button {
@@ -37,7 +55,7 @@ body {
   padding: 20px 35px;
   box-shadow: 0 4px 12px rgba(117, 114, 167, 0.15);
   transition: all 0.3s ease;
-  min-width: 160px;
+  width: 30vw;
   text-align: center;
   border: 2px solid transparent;
 }
