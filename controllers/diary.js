@@ -53,7 +53,7 @@ exports.diary_filter_post = async (req, res) => {
     owner: req.session.user._id,
     date: req.body.date })
   if (!req.body.date) {
-    diaries = await Diary.find({ ownser : req.session.user._id })
+    diaries = await Diary.find({ owner : req.session.user._id })
   }
   res.render("diary/index.ejs", { diaries })
 }

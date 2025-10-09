@@ -40,13 +40,15 @@ body {
 
 .filter-select {
   font-family: "Playfair Display";
-  padding: 10px 14px;
+  padding: 10px 12px;
   border: 1px solid #7572a7;
   border-radius: 8px;
   background-color: #fffdf8;
   color: #384554;
   font-size: 16px;
   transition: 0.3s;
+  width: 15vw;
+  height: 7vh;
 }
 
 .filter-select:focus {
@@ -55,7 +57,7 @@ body {
 }
 
 .filter-btn {
-  background-color: #7572a7;
+  background-color: #7572a700;
   color: #faf3e0;
   border: none;
   border-radius: 8px;
@@ -66,12 +68,12 @@ body {
 }
 
 .filter-btn:hover {
-  background-color: #5f57a0;
+  background-color: #5f57a000;
   transform: scale(1.03);
 }
 
 .add-goal {
-  width: 90%;
+  width: 60vw;
   max-width: 600px;
   margin: 20px auto;
   background-color: #ffffffd6;
@@ -119,7 +121,7 @@ body {
 
 .add-btn {
   font-family: "Playfair Display";
-  background-color: #7572a7;
+  background-color: #7572a700;
   color: whitesmoke;
   border: none;
   border-radius: 8px;
@@ -130,7 +132,7 @@ body {
 }
 
 .add-btn:hover {
-  background-color: #5f57a0;
+  background-color: #5f57a000;
   transform: scale(1.03);
 }
 
@@ -203,7 +205,7 @@ body {
 
 .update-btn {
   font-family: "Playfair Display";
-  background-color: #7572a7;
+  background-color: #7572a700;
   color: whitesmoke;
   border: none;
   border-radius: 8px;
@@ -214,7 +216,7 @@ body {
 }
 
 .update-btn:hover {
-  background-color: #5f57a0;
+  background-color: #5f57a000;
   transform: scale(1.03);
 }
 
@@ -222,7 +224,7 @@ body {
   font-family: "Playfair Display";
   display: flex;
   align-items: center;
-  background-color: #a14b4b;
+  background-color: #a14b4b00;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -233,7 +235,7 @@ body {
 }
 
 .delete-btn:hover {
-  background-color: #883f3f;
+  background-color: #883f3f00;
   transform: scale(1.03);
 }
 

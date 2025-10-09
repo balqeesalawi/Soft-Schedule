@@ -11,7 +11,7 @@
   <form action="/diary/filter" method="post" class="filter-form">
     <label for="date">Filter by Duration</label>
     <input type="date" name="date" id="date" />
-    <button type="submit" class="filter-btn">Filter</button>
+    <button type="submit" class="filter-btn"><img src="../photos/search.png" alt="search" width="25" height="25" /></button>
   </form>
 </section>
 
@@ -30,11 +30,11 @@
     <div class="actions">
 
     <a href="/diary/<%= diary._id %>/edit">
-      <button type="submit" class="edit">Edit</button>
+      <button type="submit" class="edit"><img src="../photos/edit.png" alt="search" width="25" height="24" /></button>
     </a>
         <!-- BUTTONS -->
       <form action="/diary/<%= diary._id %>?_method=DELETE" method="POST" class="delete-form">
-        <button type="submit" class="delete-btn">Delete</button>
+        <button type="submit" class="delete-btn"><img src="../photos/delete.png" alt="search" width="25" height="25" /></button>
       </form>
     </div>
   </li>

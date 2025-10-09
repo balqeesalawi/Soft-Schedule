@@ -50,7 +50,7 @@ body {
 }
 
 .filter-btn {
-  background-color: #7572a7;
+  background-color: #7572a700;
   color: whitesmoke;
   border: none;
   border-radius: 8px;
@@ -99,7 +99,7 @@ body {
   background-color: #ffffffd6;
   border-radius: 12px;
   padding: 12px;
-  width: 180px;
+  width: 20vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -121,7 +121,7 @@ body {
 }
 
 .list-item .edit {
-  background-color: #7572a7;
+  background-color: #7572a700;
   color: whitesmoke;
   border: none;
   border-radius: 8px;
@@ -133,12 +133,12 @@ body {
 }
 
 .list-item .edit:hover {
-  background-color: #7572a7;
+  background-color: #7572a700;
   transform: scale(1.05);
 }
 
 .delete-btn {
-  background-color: #a14b4b;
+  background-color: #a14b4b00;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -150,7 +150,7 @@ body {
 }
 
 .delete-btn:hover {
-  background-color: #883f3f;
+  background-color: #883f3f00;
   transform: scale(1.05);
 }
 
@@ -421,8 +421,7 @@ body.show-page {
 }
 
 .show-delete-btn {
-  width: 150px;
-  height: 70px;
+  
   background-color: #e74c3c;
   color: #ffffff;
 }
