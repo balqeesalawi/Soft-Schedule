@@ -23,7 +23,7 @@ exports.auth_signup_post = async (req, res) => {
 
   // Register the user
   const user = await User.create(req.body)
-  res.send(`Thanks for signing up ${user.username}`)
+  res.render("auth/sign-in.ejs")
 }
 
 exports.auth_signin_get = async (req, res) => {

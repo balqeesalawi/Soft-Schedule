@@ -5,10 +5,13 @@
 
 
 <body>
-<h1>All books</h1>
-<div class="index-container">
 
+<div class="index-container">
+<h1>All books</h1>
   <ul class="book-ul">
+    <div class="newBookContainer">
+<a class="new-book" href="/books/new">Add a New Book</a>
+</div>
 
   <% reader.forEach((list, index)=>{ %>
 <div class="index-div">
@@ -21,8 +24,6 @@
   <% }) %>
 </ul>
 </div>
-<div class="newBookContainer">
-<a class="new-book" href="/books/new">Add a New Book</a>
-</div>
+
 </div>
 </body>

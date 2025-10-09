@@ -15,7 +15,7 @@
       <option value="month" <%= selectedDuration === "month" ? "selected" : "" %>>Month</option>
       <option value="year" <%= selectedDuration === "year" ? "selected" : "" %>>Year</option>
     </select>
-    <button type="submit" class="filter-btn">Filter</button>
+    <button type="submit" class="filter-btn"><img src="../photos/search.png" alt="search" width="25" height="25" /></button>
   </form>
 </section>
 
@@ -29,7 +29,7 @@
       <option value="year">Year</option>
     </select>
     <input type="text" name="goal" placeholder="Write your goal..." class="goal-input"/>
-    <button type="submit" class="add-btn">Add Goal</button>
+    <button type="submit" class="add-btn"><img src="../photos/add.png" alt="search" width="25" height="25" /></button>
   </form>
 </section>
 
@@ -45,11 +45,11 @@
           <option value="month" <%= goal.duration === "month" ? "selected" : "" %>>Month</option>
           <option value="year" <%= goal.duration === "year" ? "selected" : "" %>>Year</option>
         </select>
-        <button type="submit" class="update-btn">Update</button>
+        <button type="submit" class="update-btn"><img src="../photos/update.png" alt="search" width="25" height="25" /></button>
       </form>
 
       <form action="/goals/<%= goal._id %>?_method=DELETE" method="POST" class="delete-form">
-        <button type="submit" class="delete-btn">Delete</button>
+        <button type="submit" class="delete-btn"><img src="../photos/delete.png" alt="search" width="25" height="25" /></button>
       </form>
     </li>
   <% }) %>

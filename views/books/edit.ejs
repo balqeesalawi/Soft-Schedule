@@ -4,8 +4,9 @@
 
 <%- include("../partials/_navbar.ejs") %>
 <body>
-<h1>Edit your Book list</h1>
+
 <div class="edit-container">
+ <h1>Edit your Book list</h1> 
 <div class="edit-body">
 <form action="/books/<%= reader._id%>?_method=PUT" method="post">
   <label for="title">Book Title</label>
@@ -24,11 +25,15 @@
   <label for="isDoneReading">Done Reading</label>
   <input type="checkbox" name="isDoneReading" id="isDoneReading" <% if (reader.isDoneReading){%>
   checked <%}%>>
+
+  <button type="submit">Update</button>
+
+</form>
+
   </div>
 </div>
   <br>
 
-  <button type="submit">Update</button>
-</form>
+
 </div>
 </body>

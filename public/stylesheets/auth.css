@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bangers&family=Bungee&family=Calistoga&family=Concert+One&family=Lobster&family=Luckiest+Guy&family=Pacifico&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+US+Modern:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bangers&family=Boogaloo&family=Bungee&family=Calistoga&family=Concert+One&family=Lobster&family=Luckiest+Guy&family=Pacifico&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+US+Modern:wght@100..400&display=swap');
 body {
   margin-top: 10px;
   padding: 10px;
-  font-family: "Poppins", sans-serif;
+  font-family: "Calistoga";
   background-color: #EAEAEA;
   color: whitesmoke;
   min-height: 100vh;
@@ -12,25 +14,25 @@ body {
 }
 
 h1 {
-  font-size: 3rem;
-  text-align: center;
-  text-shadow: 0px 6px 14px #514e65;
+  font-size: 55px;
 }
 
-.sign-in-h1 {
-  font-size: 20px;
+h2 {
+  font-size: 30px;
 }
+
+
 
 .signin-container,
 .signup-container {
   background-color: #7572A7;
   box-shadow: 3px 3px 4px 4px #38434f;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
-  width: 25em;
-  height: 50%;
+  width: 50vw;
+  height: 60vh;
   border-radius: 28px;
   margin-top: 30px;
   padding-top: 30px;
@@ -39,25 +41,34 @@ h1 {
 
 
 input {
-  padding: 10 px;
-  margin-bottom: 15px;
-  width: 100%;
-  border-radius: 15px;
-  height: 40px;
+  background-color: whitesmoke;
+  border: 1px solid #7572A7;
+  border-radius: 6px;
+  padding: 5px;
+  margin: 10px 0;
+  transition: all 0.3s ease;
+  display: inline-block;
+  height: 30px;
 }
 
 button {
-  padding: 10px;
-  background-color: rgb(43, 72, 78);
-  color: white;
-  border-radius: 23px;
-  border: none;
+  background-color: whitesmoke;
+  border: 1px solid #7572A7;
+  border-radius: 6px;
+  padding: 5px;
   margin: 10px 0;
-  font-size: 1.1em;
+  transition: all 0.3s ease;
+  display: inline-block;
+  height: 30px;
+  width: 90px;
 
 }
 
 button:hover{
-   background-color: rgb(78, 138, 150);
+   background-color: #b0b0b0d4;
 }
 
+.form-container {
+  margin-top: 8%;
+
+}
