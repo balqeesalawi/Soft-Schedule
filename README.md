@@ -51,6 +51,34 @@
 #### ER Diagram
 ![image](./screenshots/diagram.png)
 
+***
+### Home page
+![image](./screenshots/Screenshot%202025-10-09%20113428.png)
+*** 
+### To-do-List page
+![image](./screenshots/Screenshot%202025-10-09%20113510.png)
+***
+### Book-list page
+![image](./screenshots/Screenshot%202025-10-09%20113541.png)
+
+![image](./screenshots/Screenshot%202025-10-09%20113605.png)
+***
+![image](./screenshots/Screenshot%202025-10-09%20113625.png)
+***
+### Goal-page
+![image](./screenshots/Screenshot%202025-10-09%20113647.png)
+***
+### Dairy page
+![image](./screenshots/Screenshot%202025-10-09%20113810.png)
+***
+![image](./screenshots/Screenshot%202025-10-09%20113850.png)
+***
+### Profile-Page
+![image](./screenshots/Screenshot%202025-10-09%20113920.png)
+
+![image](./screenshots/Screenshot%202025-10-09%20113932.png)
+
+![image](./screenshots/Screenshot%202025-10-09%20113944.png)
 ### ***Future Updates***
 - [ ] Adding a pop Up reminder for daily tasks, books, and achieving goal
 - [ ] Adding a calender and connecting it to daily tasks
